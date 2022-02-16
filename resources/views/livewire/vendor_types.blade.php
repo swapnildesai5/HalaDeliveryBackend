@@ -1,7 +1,7 @@
 @section('title', __('Vendor Types') )
 <div>
 
-    <x-baseview title="{{ __('Vendor Types') }}">
+    <x-baseview title="{{ __('Vendor Types') }}" :showNew="true">
         <livewire:tables.vendor-type-table />
     </x-baseview>
 

@@ -1,7 +1,7 @@
 @section('title', __('SubCategories') )
 <div>
 
-    <x-baseview title="{{ __('SubCategories') }}">
+    <x-baseview title="{{ __('SubCategories') }}" :showNew="true">
         <livewire:tables.sub-category-table />
     </x-baseview>
 

@@ -69,6 +69,16 @@ trait DataTableTrait
         });
     }
 
+    public function customColumn($title = '', $actionView)
+    {
+
+        return Column::make($title)->format(function ($value, $column, $row) use ($actionView) {
+            return view($actionView, $data = [
+                "model" => $row
+            ]);
+        });
+    }
+
 
     public function priceColumn()
     {

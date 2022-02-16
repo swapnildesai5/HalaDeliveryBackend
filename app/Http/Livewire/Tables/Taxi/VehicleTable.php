@@ -2,22 +2,21 @@
 
 namespace App\Http\Livewire\Tables\Taxi;
 
-use App\Http\Livewire\Tables\BaseTableComponent;
 use App\Models\Vehicle;
-use Kdion4891\LaravelLivewireTables\Column;
+use App\Http\Livewire\Tables\BaseDataTableComponent;
+use Rappasoft\LaravelLivewireTables\Views\Column;
 
-class VehicleTable extends BaseTableComponent
+class VehicleTable extends BaseDataTableComponent
 {
 
     public $model = Vehicle::class;
-    public $header_view = 'components.buttons.new';
 
     public function query()
     {
         return Vehicle::query();
     }
 
-    public function columns()
+    public function columns(): array
     {
         return [
             Column::make(__('ID'),"id")->searchable()->sortable(),
@@ -26,8 +25,8 @@ class VehicleTable extends BaseTableComponent
             Column::make(__('Color'),'color'),
             Column::make(__('Car Make'),'car_model.car_make.name')->searchable(),
             Column::make(__('Car Model'),'car_model.name')->searchable(),
-            Column::make(__('Active'))->view('components.table.active'),
-            Column::make(__('Actions'))->view('components.buttons.primary_actions'),
+            $this->activeColumn(),
+            $this->actionsColumn('components.buttons.primary_actions'),
         ];
     }
 }

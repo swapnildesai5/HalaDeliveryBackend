@@ -31,6 +31,7 @@ class AppSettingsLivewire extends BaseLivewireComponent
     public $clearFirestore;
     public $orderVerificationType;
     public $vendorsHomePageListCount;
+    public $partnersCanRegister;
     
     //login
     public $googleLogin;
@@ -146,6 +147,7 @@ class AppSettingsLivewire extends BaseLivewireComponent
         $this->bannerHeight = setting('bannerHeight', "150");
         $this->allowVendorCreateDrivers = (bool) setting('allowVendorCreateDrivers');
         $this->showVendorTypeImageOnly = (bool) setting('showVendorTypeImageOnly');
+        $this->partnersCanRegister = (bool) setting('partnersCanRegister', true);
 
         //
         $this->accentColor = setting('appColorTheme.accentColor', '#64bda1');
@@ -232,6 +234,7 @@ class AppSettingsLivewire extends BaseLivewireComponent
                 'bannerHeight' =>  $this->bannerHeight,
                 'allowVendorCreateDrivers' =>  $this->allowVendorCreateDrivers,
                 'showVendorTypeImageOnly' =>  $this->showVendorTypeImageOnly,
+                'partnersCanRegister' =>  $this->partnersCanRegister,
 
                 'enableGroceryMode' =>  $this->enableGroceryMode,
                 'enableReferSystem' =>  $this->enableReferSystem,

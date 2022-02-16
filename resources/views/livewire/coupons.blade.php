@@ -1,7 +1,7 @@
 @section('title',  __('Coupons') )
 <div>
 
-    <x-baseview title="{{ __('Coupons') }}">
+    <x-baseview title="{{ __('Coupons') }}" :showNew="true">
         <livewire:tables.coupon-table />
     </x-baseview>
 

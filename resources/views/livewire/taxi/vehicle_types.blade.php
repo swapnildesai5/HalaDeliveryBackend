@@ -1,7 +1,7 @@
 @section('title', __('Vehicle Types') )
 <div>
 
-    <x-baseview title="{{ __('Vehicle Types') }}">
+    <x-baseview title="{{ __('Vehicle Types') }}" :showNew="true">
         <livewire:tables.taxi.vehicle-type-table />
     </x-baseview>
 

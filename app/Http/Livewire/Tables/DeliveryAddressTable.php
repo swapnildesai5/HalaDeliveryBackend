@@ -5,9 +5,9 @@ namespace App\Http\Livewire\Tables;
 use App\Models\DeliveryAddress;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
-use Kdion4891\LaravelLivewireTables\Column;
+use Rappasoft\LaravelLivewireTables\Views\Column;
 
-class DeliveryAddressTable extends BaseTableComponent
+class DeliveryAddressTable extends BaseDataTableComponent
 {
 
     public $model = DeliveryAddress::class;
@@ -24,7 +24,7 @@ class DeliveryAddressTable extends BaseTableComponent
         }
     }
 
-    public function columns()
+    public function columns():array 
     {
         return [
             Column::make(__('ID'),"id")->searchable(),
@@ -32,8 +32,12 @@ class DeliveryAddressTable extends BaseTableComponent
             Column::make(__('Name'),'name')->searchable(),
             Column::make(__('Address'),'address')->searchable(),
             Column::make(__('Created At'), 'formatted_date'),
-            Column::make(__('Actions'))->view('components.buttons.edit'),
-            Column::make('')->view('components.buttons.delete'),
+            $this->actionsColumn('components.buttons.edit'),
+            Column::make('')->format(function ($value, $column, $row) {
+                return view('components.buttons.delete', $data = [
+                    "model" => $row
+                ]);
+            }),
         ];
     }
 }

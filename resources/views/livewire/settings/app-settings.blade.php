@@ -123,6 +123,10 @@
                         <p>{{ __("Show only image on vendor types") }}</p>
                         <x-checkbox title="{{ __('Enable') }}" name="showVendorTypeImageOnly" :defer="true" />
                     </div>
+                    <div class="block mt-4 text-sm">
+                        <p>{{ __("Allow partners(Driver, Vendor) account registration") }}</p>
+                        <x-checkbox title="{{ __('Enable') }}" name="partnersCanRegister" :defer="true" />
+                    </div>
                 </div>
 
 

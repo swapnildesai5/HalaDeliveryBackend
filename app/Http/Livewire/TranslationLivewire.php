@@ -16,9 +16,12 @@ class TranslationLivewire extends BaseLivewireComponent
     public $translatedString;
     public $forBackend = false;
 
+    public function mount(){
+        $this->languages = implode(";", config('backend.languageCodes')) ?? "fr;es;de;pt;ar;ko";
+    }
+
     public function render()
     {
-        // $this->languages = "fr;es;de;pt;ar;ko";
         return view('livewire.translation');
     }
 

@@ -31,11 +31,7 @@ class ProductTable extends OrderingBaseDataTableComponent
     {
         return [
             Column::make(__('ID'), 'id')->addClass('w-48')->searchable()->sortable(),
-            Column::make(__('Image'))->format(function ($value, $column, $row) {
-                return view('components.table.image_sm', $data = [
-                    "model" => $row
-                ]);
-            }),
+            $this->smImageColumn(),
             Column::make(__('Name'), 'name')->addClass('break-all w-64 md:w-3/12')->searchable()->sortable(),
             Column::make(__('Price'),'price')->format(function ($value, $column, $row) {
                 return view('components.table.price', $data = [
@@ -48,11 +44,7 @@ class ProductTable extends OrderingBaseDataTableComponent
                 ]);
             })->searchable()->sortable(),
             Column::make(__('Available Qty'), "available_qty")->sortable(),
-            Column::make(__('Active'))->format(function ($value, $column, $row) {
-                return view('components.table.active', $data = [
-                    "model" => $row
-                ]);
-            }),
+           $this->activeColumn(),
             Column::make(__('Actions'))->addClass('flex items-center')->format(function ($value, $column, $row) {
                 return view('components.buttons.product_actions', $data = [
                     "model" => $row
@@ -63,11 +55,6 @@ class ProductTable extends OrderingBaseDataTableComponent
         ];
     }
 
-    //     public function rowView(): string
-    // {
-    //      // Becomes /resources/views/location/to/my/row.blade.php
-    //      return 'components.table.product-row';
-    // }
 
     //
     public function deleteModel()

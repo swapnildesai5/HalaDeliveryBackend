@@ -27,6 +27,9 @@
                         </form>
 
                         {{-- registration  --}}
+                        @if ( setting('partnersCanRegister',true) )
+
+
                         <div class="my-12 text-center">
                             <p class="flex items-center justify-center mx-auto space-x-2">
                                 <x-heroicon-o-truck class="w-8 h-8 text-primary-500" />
@@ -34,6 +37,8 @@
                             </p>
                             <p><span class="my-2 text-2xl font-semibold">{{ __(('Want to Partner with us?')) }}</span> <br /><a href="{{ route('register') }}" class="ml-2 font-bold text-primary-500 text-md">{{ __(('Click here')) }}</a></p>
                         </div>
+
+                        @endif
 
                         @if (!App::environment('production'))
                         <hr class="my-5" />

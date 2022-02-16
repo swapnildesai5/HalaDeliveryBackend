@@ -8,49 +8,71 @@ use App\Models\User;
 use App\Models\Wallet;
 use App\Models\WalletTransaction;
 use Illuminate\Support\Facades\Auth;
-use Kdion4891\LaravelLivewireTables\Column;
+use Rappasoft\LaravelLivewireTables\Views\Column;
+use Rappasoft\LaravelLivewireTables\Views\Filter;
+use Spatie\Permission\Models\Role;
 
-class UserTable extends BaseTableComponent
+class UserTable extends BaseDataTableComponent
 {
 
     public $model = User::class;
     public $role;
-    public $header_view = 'components.buttons.new';
+
+
+    public function filters(): array
+    {
+        $roles = Role::all()->pluck('name')->toArray();
+        $roleFilters = [
+            "" => __('All')
+        ];
+        foreach ($roles as $role) {
+            $roleFilters[$role] = $role;
+        }
+        return [
+            'role' => Filter::make(__("Role"))
+                ->select($roleFilters),
+        ];
+    }
+
 
     public function query()
     {
         $user = User::find(Auth::id());
         if ($user->hasRole('admin')) {
-            return User::with('roles','creator')->whereHas('roles', function($query){
-                if(!empty($this->role)){
-                return $query->where('name', $this->role);
-                }
+            return User::with('roles', 'creator')->whereHas('roles', function ($query) {
+                $query->when($this->getFilter('role'), fn ($query, $role) => $query->where('name', $role));
             });
         } else {
-            return User::with('roles','creator')->whereHas('roles', function($query){
-                if(!empty($this->role)){
-                return $query->where('name', $this->role);
-                }
+
+            return User::with('roles', 'creator')->whereHas('roles', function ($query) {
+                $query->when($this->getFilter('role'), fn ($query, $role) => $query->where('name', $role));
             })->where('creator_id', Auth::id());
         }
     }
 
-    public function filterUsers($role){
-        $this->role = $role;
-    }
 
-    public function columns()
+    public function columns(): array
     {
-        return [
-            Column::make(__('ID'),"id")->searchable()->sortable(),
-            Column::make(__('Name'),'name')->searchable()->sortable(),
-            Column::make(__('Phone'),'phone')->searchable()->sortable(),
-            Column::make(__('Wallet'))->view('components.table.wallet'),
-            Column::make(__('Commission')."(%)", 'commission'),
+        $columns = [
+            Column::make(__('ID'), "id")->searchable()->sortable(),
+            Column::make(__('Name'), 'name')->searchable()->sortable(),
+        ];
+
+        if (!$this->inDemo()) {
+            $columns[] = Column::make(__('Phone'), 'phone')->searchable()->sortable();
+        }
+
+        $mColumns = [
+            $this->customColumn(__('Wallet'), 'components.table.wallet'),
+            Column::make(__('Commission') . "(%)", 'commission'),
             Column::make(__('Role'), 'role_name'),
             Column::make(__('Created At'), 'formatted_date'),
-            Column::make(__('Actions'))->view('components.buttons.user_actions'),
+            $this->actionsColumn('components.buttons.user_actions'),
         ];
+
+        $columns = array_merge($columns, $mColumns);
+
+        return $columns;
     }
 
     //
@@ -58,7 +80,7 @@ class UserTable extends BaseTableComponent
     {
 
         try {
-            
+
             $this->isDemo();
             \DB::beginTransaction();
             //

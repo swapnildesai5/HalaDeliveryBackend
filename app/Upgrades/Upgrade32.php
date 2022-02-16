@@ -17,7 +17,7 @@ class Upgrade32 extends BaseUpgrade
     {
 
         //adding in_order to some tables
-        $tables = ['banners', 'vendor_types', 'menus', 'categories', 'subcategories', 'option_groups', 'options', 'package_types', 'products', 'vendors'];
+        $tables = ['banners', 'vendor_types', 'menus', 'categories', 'subcategories', 'option_groups', 'options', 'package_types', 'products', 'vendors', 'vehicle_types'];
 
         foreach ($tables as $table) {
             if (!Schema::hasColumn($table, 'in_order')) {
@@ -46,6 +46,4 @@ class Upgrade32 extends BaseUpgrade
             });
         }
     }
-
-
 }

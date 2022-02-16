@@ -4,13 +4,12 @@ namespace App\Http\Livewire\Tables;
 
 use App\Models\Coupon;
 use App\Models\User;
-use Kdion4891\LaravelLivewireTables\Column;
+use Rappasoft\LaravelLivewireTables\Views\Column;
 
-class CouponTable extends BaseTableComponent
+class CouponTable extends BaseDataTableComponent
 {
 
     public $model = Coupon::class;
-    public $header_view = 'components.buttons.new';
 
     public function query()
     {
@@ -22,16 +21,24 @@ class CouponTable extends BaseTableComponent
         }
     }
 
-    public function columns()
+    public function columns():array
     {
         return [
             Column::make(__('ID'),"id"),
             Column::make(__('Code'),'code')->searchable()->sortable(),
-            Column::make(__('Discount'))->view('components.table.coupon_discount_price')->searchable()->sortable(),
-            Column::make(__('Description'))->view('components.table.short_description'),
+            Column::make(__('Discount'))->format(function ($value, $column, $row) {
+                return view('components.table.coupon_discount_price', $data = [
+                    "model" => $row
+                ]);
+            })->searchable()->sortable(),
+            Column::make(__('Description'))->format(function ($value, $column, $row) {
+                return view('components.table.short_description', $data = [
+                    "model" => $row
+                ]);
+            }),
             Column::make(__('Expires On'),'expires_on')->sortable(),
-            Column::make(__('Active'))->view('components.table.active'),
-            Column::make(__('Actions'))->view('components.buttons.coupon_actions'),
+            $this->activeColumn(),
+            $this->actionsColumn('components.buttons.coupon_actions'),
         ];
     }
 }

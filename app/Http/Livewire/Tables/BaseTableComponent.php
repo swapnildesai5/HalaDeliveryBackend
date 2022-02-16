@@ -172,4 +172,9 @@ class BaseTableComponent extends TableComponent
             throw new Exception(__("App is in demo version. Some changes can't be made"));
         };
     }
+
+    public function inDemo()
+    {
+       return !App::environment('production');
+    }
 }

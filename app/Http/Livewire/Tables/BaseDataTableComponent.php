@@ -180,4 +180,9 @@ class BaseDataTableComponent extends DataTableComponent
             }
         };
     }
+
+    public function inDemo()
+    {
+       return !App::environment('production');
+    }
 }

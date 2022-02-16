@@ -18,17 +18,22 @@ class OrderingBaseDataTableComponent extends BaseDataTableComponent
     //         $this->reorderEnabled = true;
     //     }
     // }
-    
+
     // Reorder called
     public function reorder($items)
     {
-        if ($this->model != null) {
-            foreach ($items as $item) {
-                $modelData = $this->model::find($item['value']);
-                $modelData->in_order = $item['order'] ?? 1;
-                $modelData->save();
+        //
+        try {
+            $this->isDemo();
+            if ($this->model != null) {
+                foreach ($items as $item) {
+                    $modelData = $this->model::find($item['value']);
+                    $modelData->in_order = $item['order'] ?? 1;
+                    $modelData->save();
+                }
             }
+        } catch (\Exception $error) {
+            $this->showWarningAlert($error->getMessage() ?? "Failed");
         }
     }
-    
 }

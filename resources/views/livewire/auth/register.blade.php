@@ -1,5 +1,6 @@
 @section('title', 'Become A Partner')
 <div>
+    @if ( setting('partnersCanRegister',true) )
     <div class="items-center min-h-screen bg-gray-50 md:flex ">
         <div class="flex flex-col overflow-y-auto md:flex-row">
             {{-- image --}}
@@ -94,6 +95,16 @@
             </div>
         </div>
     </div>
+    @else
+    {{--  Registration disabled  --}}
+    <div class="w-full p-12 mx-auto my-12 rounded-sm shadow md:w-5/12 lg:w-4/12 ">
+        <p class="mb-2 text-2xl font-semibold">{{ __('Registration Page Not available') }}</p>
+        <p class="text-sm">
+            {{ __('Partner account registration is currently unavailable. Please stay tune/contact support regarding further instruction about registering for a partners account. Thank you') }}
+        </p>
+        <p class='mt-4 text-center'><a href="{{ route('contact') }}" class="underline text-primary-600">{{ __('Contact Us') }}</a></p>
+    </div>
+    @endif
     {{-- loading --}}
     <x-loading />
 </div>

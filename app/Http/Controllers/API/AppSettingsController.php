@@ -79,7 +79,13 @@ class AppSettingsController extends Controller
                     "facebbokLogin" => (bool) setting("facebbokLogin"),
                 ],
                 //ui
-                "ui" => setting("ui"),
+                "ui" => [
+                    "categorySize" => setting("ui.categorySize"),
+                    "currency" => setting("ui.currency"),
+                    "home" => [
+                        "showBannerOnHomeScreen" => (bool) setting("ui.home.showBannerOnHomeScreen", 0),
+                    ],
+                ],
                 //taxi
                 "taxi" => setting("taxi"),
                 //for website 
