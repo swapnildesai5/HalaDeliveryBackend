@@ -1,0 +1,835 @@
+Activated
+Assign
+Deactivate
+Delete
+Edit
+New
+Payout
+Nothinng to Payout
+Subcategories
+Menu
+Review Payment
+Edit Open/close time
+Package Type
+Weight
+Width
+Length
+Height
+Product
+Options
+Price
+Quantity
+Active
+Inactive
+Yes
+No
+Back
+Remove
+Change
+Click/Tap to select media
+Save
+Cancel
+Contact Us
+Privacy Policy
+version
+Notifications
+Operations
+Backup
+Import
+Logs
+Settings
+Currencies
+Payment Methods
+Mobile App Settings
+General Settings
+Server Settings
+Translation
+Upgrade
+Delivery Address
+Coupons
+Users
+Wallet Transactions
+Earnings
+Vendor Earnings
+Driver Earnings
+Payouts
+Vendor Payouts
+Driver Payouts
+Package Types
+Pricing
+Cities
+States
+Countries
+Orders
+Dashboard
+Banners
+Categories
+SubCategories
+Vendors
+Delivery Boys
+Reviews
+Products
+Menus
+Option Groups
+Favourites
+Package Delivery
+Profile
+Log out
+Forgot Password
+Phone
+Reset Password
+Verification Code
+Verify
+New Password
+Confirm New Password
+Set New Password
+Already have an account?
+Login
+Email
+Password
+Remember me
+Forgot your password?
+Please wait while we process your payment
+Order Payment
+Instructions
+Payment Details
+Transaction Code
+Transaction Photo
+Submit
+You can close this window
+Do not close this window
+Wallet Topup
+You may close this window
+Payment Failed
+Payment Successful
+Order Payment was successful
+Invalid Order
+There was an error while loading order payment. Please check the link annd try again later
+Already processed
+Order payment has already been processed. Please check your orders to see more details abount the order
+Wallet Topup Payment
+Wallet Topup Payment was successful
+Account Top-up
+App Name
+List Of Country Codes
+Note: For example if you want to allow phone from Ghana you enter GH
+Enable Firebase Phone OTP for verification
+Enable
+Driver Wallet System
+Refer System
+Refer Amount
+Multiple Stops(Parcel Delivery
+Max Stops(Parcel Delivery)
+New Currency
+Name
+Code
+Country Code
+Symbol
+Edit Currency
+Push notification (Firebase)
+Web App Settings
+Privacy & Policy
+Contact Info
+Create Banner
+Category
+Update
+Photo
+Create Category
+Edit Category
+State
+Country
+Create City
+Edit City
+Create Country
+Edit Country
+Discount
+Expires On
+Is Percentage?
+Description
+Status
+Useable Times
+Coupon Details
+Update Option
+Create Coupon
+TOTAL ORDERS
+TOTAL EARNINGS
+TOTAL VENDORS
+TOTAL Clients
+Create User Account
+Login Password
+Commission
+Wallet Balance
+Note
+Payment Method
+Earning
+Amount
+Create Menu
+Update Menu
+Send Notification
+Title
+Message
+All
+Custom
+Allow customers to select multiple options under this option group
+Multiple
+Create Option Group
+Option Group
+Options Group
+Update Option Group
+Language
+Create Option
+Image
+Delivery Boy
+Payment Status
+Approve
+Order Payment Proof
+Driver Tip
+Subtotal
+Discount Amount
+Delivery Fee
+Tax
+Total
+Edit Order
+Vendor
+Vendor Address
+Date of order
+Updated At
+Driver
+Driver Phone
+Recipient
+Recipient Phone
+Dropoff Address
+Stop
+Order Details
+Pickup Address
+Sender Phone
+User Phone
+Sender
+User
+Create Package Type Pricing
+Max Booking Days (7)
+Max number of days user can book ahead
+Base Delivery Price
+Price for Package
+Charge Per KG
+Distance Price
+Charge Per KM
+Auto move to ready
+Edit Package Type
+Create Package Type
+Instruction(offline payment)
+Edit Payment Method
+Available for Delivery
+Discount Price
+Capacity
+Unit
+Package Count
+Available Qty
+Featured
+Details
+Note: Menus of selected vendor for product will be listed here
+Add to Menus
+Add
+Note: Only sub-categories of the assigned product categories will be listed here
+Assign To Sub-categories
+Can be Delivered
+If product can be delivered to customers
+Update Product
+Enter the unit of product. Default is kilogram(kg). e.g Kg, g, m, L
+Number of item per package (ex: 6, 10)
+Number of item available qty
+Create Product
+Update Profile
+Update Profile information
+Change Password
+Current Password
+Edit State
+Create State
+Create SubCategory
+Edit SubCategory
+Tanslation
+Edit User Account
+Role
+Assign Vendors To City Admin
+City
+New Operation City
+Edit Operation City
+Edit Operation Country
+New Operation Country
+New Operation State
+Assign Payment Methods To Vendor
+Managers
+Set vendor open/close time
+Day
+Openning Time
+Closing Time
+Address
+Latitude
+Longitude
+Delivery Range
+Available for Pickup
+Open
+Delivery Range(KM)
+Charge per KM
+Delivery fee will be per KM
+Pickup
+Allows pickup orders
+Delivery
+Allows delivery orders
+Schedule Order
+Allows customer to schedule orders
+System Commission(%)
+Logo
+Featured Image
+Assign Managers To Vendor
+Update Vendor
+Has Sub-Categories
+This will allow products to be attached to sub-categories
+Package Delivery Vendor
+Check this if the vendor is for package delivery
+System will automatic assign order to delivery boy
+Base Delivery Fee
+Create Vendor
+New Order successfully!
+New Order failed!
+Qty is required
+Please check Vendor
+Please check at least one product
+Please check customer
+Please select delivery address
+Delivery address is out of vendor delivery range
+Order Summary
+Customer
+Pickup Order
+Coupon Code
+APPLY
+Tip
+Next
+Create Order
+Click here
+Personal Information
+Business Name
+Business Information
+Become a partner
+Referral Code
+Driver App Settings
+Accept Time Duration(seconds)
+Extensions
+Vendor Types
+Actions
+Created At
+App is in demo version. Some changes can't be made
+Are you sure you want to delete the selected data?
+Are you sure you want to deactivate the selected data?
+Are you sure you want to activate the selected data?
+Deactivated
+Deleted
+Wallet
+Type
+Max Booking Days
+Base Price
+Auto Ready
+Extra fields
+Paid By
+Paid On
+Rating
+Review
+Creator
+Method
+Invalid referral code
+Email already associated with an account
+Phone already associated with an account
+Photo must be equal or less to 2MB
+User profile updated successful
+Invalid Current Password
+User password updated successful
+User Account is inactive
+User login successful
+Phone not associated with any account
+There is no account accoutiated with provided phone number 
+Account Password Updated Successfully
+Password Reset Failed
+Account with phone already exists
+Email not associated with any account
+Unauthorized Access. Please try with an authorized credentials
+Account is not active. Please contact us
+Manager is not assigned to a vendor. Please assign manager to vendor and try again
+Invalid credentials. Please change your password and try again
+Notification sent successfully
+Notification failed
+No Coupon Found
+Delivery address created successfully
+Delivery address creation failed
+Delivery address updated successfully
+Delivery address update failed
+Delivery address deleted successfully
+No Delivery address Found
+Product already Favourite
+Favourite added successfully
+No Favourite Found
+Favourite deleted successfully
+Wallet Balance is less than order total amount
+Order placed successfully. Relax while the vendor process your order
+Order placed successfully. Please follow the link to complete payment.
+Order not assigned. Insufficient wallet balance
+Order has been accepted already by another delivery boy
+Order placed 
+New Order
+System does not service pickup location
+System does not service drop-off location
+Vendor does not service pickup location
+Vendor does not service drop-off location
+System does not service stop location
+Vendor does not service stop location
+No Product Found
+You are not allowed to perform this operation
+Product Added successfully
+Product updated successfully
+Product deleted successfully
+Vendor rated successfully
+Driver rated successfully
+Rating failed
+Vendor already rated
+Driver already rated
+Not Authorised for the request
+No Vendor Found
+Unauthorised Access
+Package Pricing Set successfully
+Package Pricing updated successfully
+Package Pricing deleted successfully Invalid referal code
+Package Pricing deleted successfully
+No account associated with phone
+Account password updated. You can now login with the newly created account password
+Invalid Credentials. Please check your credentials and try again
+Account Created Successfully. Your account will be reviewed and you will be notified via email/sms when account gets approved. Thank you
+An error occurred please try again later
+Payment info uploaded successfully. You will be notified once approved
+Payment info uploaded failed!
+App Settings saved successfully!
+App Settings save failed!
+Backup Deleted
+Backup delete Failed
+Database backup successful
+Database backup failed
+Banner created successfully!
+Banner creation failed!
+Banner updated successfully!
+Banner updated failed!
+Photo must be less than 4MB
+scheduled
+pending
+preparing
+ready
+enroute
+failed
+cancelled
+delivered
+created successfully!
+creation failed!
+updated successfully!
+updated failed!
+Coupon
+Total Orders
+Vendors This Year
+Users This Week
+Total Earning
+Delivery address
+Data imported successfully!
+Data import failed!
+Please select data file to import
+Notification sent successful
+Option
+Order
+Package Type Pricing
+Mail Settings saved successfully!
+Mail Settings save failed!
+Settings saved successfully!
+Settings save failed!
+Privacy Policy Settings saved successfully!
+Privacy Policy Settings save failed!
+Contact Info saved successfully!
+Contact Info save failed!
+Subcategory
+System Updated Successfully!
+Failed
+Rollback Updated Successfully!
+Terminal command successfully!
+Terminal command failed
+Vendor City Admin
+Vendor Managers
+Both time must be supplied
+Vendor Open/close time
+assigned successfully
+assignment failed!
+Vendor Type
+Order Update
+Order #
+Your order is pending
+ has just been placed with you
+Your order is now being prepared
+Your order is now ready for delivery/pickup
+ has been assigned to a delivery boy
+ has been assigned to you
+ has been delivered
+ has been
+Want to Partner with us?
+Update Vendor Type
+Order Auto Assignment
+Minimum Order Amount
+Maximum Order Amount
+Maximum of
+is allowed
+An error occured on our server
+Driver order search radius
+Enter driver name
+Search for driver
+Install Extension
+Install
+Please select extension file
+Transfer To Wallet
+Invalid account password
+Wallet Transfer
+Driver Remittance
+Remittance By
+Transfer
+Collect
+Driver Max Acceptable Order
+Invalid tracking code
+Clear Data
+Clear
+Are you sure you want to clear
+clear successfully!
+clearing failed!
+Order Notification
+with
+is now:
+Status Updated Successfully
+Plus Option
+Option price should be added to product price
+Times Per Customer
+Empty for unlimited times
+Coupon Report
+Total Coupons
+Top Coupon Users
+Customer is required to select at least one option under this option group
+Required
+Cancel Pending Order Time
+Auto Cancel Pending Order Time
+Order could not be found
+Order has already been
+Vendor Earning Enable(irrespective of the payment method used)
+SMS Gateways
+New Order Alert
+Pickup Location
+Order Alert(Released)
+This order has not receive update from you and its there be released for other driver to accept
+Phone number not associated with any account
+OTP failed to send to provided phone number
+OTP sent successfully
+Invalid OTP
+OTP verification successful
+Terms & Condition
+Terms & conditions saved successfully!
+Terms & conditions save failed!
+Auto Accept Order
+System will automatic change pending order to preparing
+Multiple Stop Fee
+Subscription
+Subscriptions
+Vendor Subscriptions
+My Subscriptions
+Days
+New Subscription
+Edit Subscription
+Use Subscription
+Subscription Payment
+Subscription Payment Proof
+Close
+Vendor Subscription payment failed
+Vendor Subscription payment approved
+Vendor Subscription payment rejected successful
+Vendor Subscription payment rejection failed
+Expired
+External Link
+Category - when link & vendor is empty
+Link - When provided
+Vendor - when provied and link is empty
+In order of arrangement
+New Vendor Type
+Services
+Service
+Create Service
+Edit Service
+Per Hour
+Images
+Service created successfully
+Service updated successfully
+Service deleted successfully
+Vehicle Types
+Vehicles
+Car Makes
+Car Models
+Base Fare
+Minimum Fare
+Fare Per Minutes
+Distance Fare
+Registration Number
+Color
+Car Make
+Car Model
+Documents
+Vehicle Details
+Page Settings
+Vendor Verification Document Instructions
+Use In Taxi
+An error occured while trying to book your trip
+ has been assigned to a driver
+Trip #
+Trip Update
+New Trip
+Your trip is pending
+Your trip is now being prepared
+Searching for driver
+Trip Notification
+by
+ has been completed
+Trip cancelled successfully
+Trip cancellation failed
+Driver info failed
+Emergency Contact for drivers and customers
+Vehicle Type
+General Drivers Commission
+General Vendors Commission
+Finance
+Taxi Auto Cancel Time
+Taxi Settings
+Custom Notification Message
+These are messages sent to customer base on trip status
+Pending
+Preparing
+Ready
+Enroute
+Completed
+Cancelled
+Driver assigned to your trip and their way
+Driver has arrived
+Trip started
+Trip completed
+Trip was cancelled
+Trip failed
+These are messages sent to customer base on order status
+Custom Order Notification Messages
+Custom Notification Message Setting saved successfully!
+Custom Notification Message Setting Failed
+Clear Firebase after order
+Note: This is to reduce the size of your firebase firestore, by removing completed or failed orders from the firebase firestore
+Rider already rated
+Rider rated successfully
+Already rated
+Rated successfully
+Driver reject order successul
+Driver reject order failed
+Average driving speed
+Body
+Target
+Image ( Ratio 3:1 )
+Products Report
+Top Products
+Top Categories
+Top Subcategories
+Order Count
+Top Services
+Top Vendors
+Vendors Report
+Services Report
+Least Vendors
+Top Earning Vendors
+Top Vendors(Sales)
+Successful Orders
+Pending Orders
+Customers Report
+Top Buyers
+Least Buyers
+Most Order Cancellation
+Most Orders
+Total Amount
+Payment Accounts
+Payments
+Number
+Account Nme
+Account Number
+Payment Account Details
+Payout request submitted. You will receive a notification once processed
+No earning avaialble
+Approved
+Are you sure you want to Approve the selected data?
+Reject
+Rejected
+Are you sure you want to Reject the selected data?
+Payout Details
+Payment Account
+Approve Payout
+Insufficient earning amount
+New Payment Account
+Edit Payment Account
+My Payout
+Note: Number of products/services/package types allowed per vendor
+Vendor requires subscription
+Top Vendor by no of Subscriptions
+Top Subscription
+Least Subscription
+Subscription Report
+Vendor Count
+Invalid credentials. Please check your password and try again
+Invalid credentials. Please check your phone and try again
+Attach product to notification
+Attach vendor to notification
+Attach service to notification
+Vendor Management
+Delivery Zones
+New Delivery Zone
+Coordinates
+Update Delivery Zone
+Delivery Zone
+Order placed successfully. You will be notified once order is prepared and ready
+Topup
+Amount is less than minimun topup amount
+Minimum Wallet Topup Ammount
+Location Update Distance(Meter)
+Location Update Time(Seconds)
+Test email sent successfully!
+Test email failed!
+New Account
+New Pricing
+Multiple Currency
+Troubleshoot
+Fix Image(Not Loading)
+Clear Cache
+Scheduled
+Vendors Home Page List Count
+Finance Settings
+Finance Settings saved successfully!
+Finance Settings save failed!
+Refer
+Driver must have enough in wallet balance irrespective of the payment method
+Notification Error
+Category Per Row
+Category Per Page
+Payment
+Has Own Drivers
+request
+review
+successful
+Zones
+Taxi Booking
+Auto-Assignment
+Auto-Assignments
+UI Settings
+Website Settings
+Reports
+Report
+Start Date
+End Date
+Export
+New Car Make
+Details
+sunday
+monday
+tuesday
+wednesday
+thursday
+friday
+saturday
+Phone OTP for verification
+Mobile App Settings
+App Name
+Country Code
+Multiple Stops(Parcel Delivery)
+Note: For example if you want to allow phone from Ghana you enter GH
+List Of Country Codes
+Max Stops(Parcel Delivery)
+OTP Login
+Google Login
+Apple Login
+Facebook Login
+Calculate Distance via Google Map
+Single-Vendor Mode
+Chat Option
+Parcel Vendor By Location
+Order Tracking
+Allow Prescription
+Proof of delivery by delivery boy
+Proof type
+Note
+Search
+Vendor
+CarMake
+CarModel
+Vendor Mangt.
+No results to display.
+Category
+fixed
+hour
+day
+month
+year
+New Vehicle Type
+Update Vehicle Type
+Currency
+Make
+Mintues
+Save Changes
+Method
+New Delivery Address
+Update Delivery Address
+City-admin
+Driver
+Client
+Manager
+Admin
+All
+Vendors
+Drivers
+Date
+Qty
+Database Backups
+File Name
+Created
+File Size
+New Backup
+No Backup Yet
+Never
+Last Run Time
+Location
+Thousand separator
+Decimals
+Decimal separator
+Auto assignment
+Auto Assignment checks
+Google Map
+Filter Result By Country
+Filter Countries
+Address search will be filter base on countries set.
+View Sections
+Create View Section
+Edit View Section
+Slug
+Manage Extensions
+Prepare Time
+Delivery Time
+minutes
+e.g 10 or 30-90
+Export
+Data Export
+Data Import
+Import
+Categories
+Subcategories
+Vendors
+Menus
+Products
+Data exported successfully!
+Data export failed!
+In Order Number
+Show Banner On Home Screen
+Home Screen
