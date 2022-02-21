@@ -824,5 +824,8 @@
   "Re-ordering not allowed in demo": "Re-commande non autorisée dans la démo",
   "Allow partners(Driver, Vendor) account registration": "Autoriser l'enregistrement du compte des partenaires (chauffeur, fournisseur)",
   "Registration Page Not available": "Page d'inscription Non disponible",
-  "Partner account registration is currently unavailable. Please stay tune\/contact support regarding further instruction about registering for a partners account. Thank you": "L'enregistrement d'un compte partenaire n'est actuellement pas disponible. Veuillez rester à l'écoute\/contacter l'assistance pour obtenir des instructions supplémentaires sur l'inscription à un compte partenaire. Merci"
+  "Partner account registration is currently unavailable. Please stay tune\/contact support regarding further instruction about registering for a partners account. Thank you": "L'enregistrement d'un compte partenaire n'est actuellement pas disponible. Veuillez rester à l'écoute\/contacter l'assistance pour obtenir des instructions supplémentaires sur l'inscription à un compte partenaire. Merci",
+  "Payer": "Payer",
+  "Collect Payment From": "Recueillir le paiement de",
+  "Receiver": "Receveur"
 }

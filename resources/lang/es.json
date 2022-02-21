@@ -824,5 +824,8 @@
   "Re-ordering not allowed in demo": "No se permite reordenar en la demostración",
   "Allow partners(Driver, Vendor) account registration": "Permitir registro de cuenta de socios (conductor, proveedor)",
   "Registration Page Not available": "Página de registro No disponible",
-  "Partner account registration is currently unavailable. Please stay tune\/contact support regarding further instruction about registering for a partners account. Thank you": "El registro de cuenta de socio no está disponible actualmente. Manténgase en sintonía\/póngase en contacto con el soporte para obtener más instrucciones sobre cómo registrarse para obtener una cuenta de socios. Gracias"
+  "Partner account registration is currently unavailable. Please stay tune\/contact support regarding further instruction about registering for a partners account. Thank you": "El registro de cuenta de socio no está disponible actualmente. Manténgase en sintonía\/póngase en contacto con el soporte para obtener más instrucciones sobre cómo registrarse para obtener una cuenta de socios. Gracias",
+  "Payer": "Paga",
+  "Collect Payment From": "Cobrar el pago de",
+  "Receiver": "Receptor"
 }

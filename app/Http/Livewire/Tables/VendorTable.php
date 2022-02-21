@@ -11,7 +11,9 @@ use App\Models\Order;
 use App\Models\PackageTypePricing;
 use App\Models\Product;
 use App\Models\Service;
+use App\Models\VendorType;
 use Rappasoft\LaravelLivewireTables\Views\Column;
+use Rappasoft\LaravelLivewireTables\Views\Filter;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
@@ -21,9 +23,28 @@ class VendorTable extends OrderingBaseDataTableComponent
     public $model = Vendor::class;
     public bool $columnSelect = false;
 
+
+    public function filters(): array
+    {
+        $vendorTypes = VendorType::all();
+        $filtersArray = [
+            "" => __('All')
+        ];
+        foreach ($vendorTypes as $vendorType) {
+            $filtersArray[$vendorType->id] = $vendorType->name;
+        }
+        return [
+            'vendor_type' => Filter::make(__("Type"))
+                ->select($filtersArray),
+        ];
+
+
+    }
+
+
     public function query()
     {
-        return Vendor::with('vendor_type')->mine();
+        return Vendor::with('vendor_type')->mine()->when($this->getFilter('vendor_type'), fn ($query, $value) => $query->where('vendor_type_id', $value));;
     }
 
     public function columns(): array

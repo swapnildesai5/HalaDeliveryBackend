@@ -26,4 +26,8 @@ class PackageTypePricing extends BaseModel
     {
         return $this->belongsTo('App\Models\PackageType', 'package_type_id', 'id');
     }
+
+    public function vendor(){
+        return $this->belongsTo(Vendor::class);
+    }
 }

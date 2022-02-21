@@ -290,6 +290,11 @@ class OrderController extends Controller
             $order->length = $request->length ?? 0;
             $order->height = $request->height ?? 0;
 
+            //
+            if (\Schema::hasColumn('orders', 'payer')) {    
+                $order->payer = $request->payer;
+            }
+
             $order->sub_total = $request->sub_total;
             $order->discount = $request->discount;
             $order->delivery_fee = $request->delivery_fee;

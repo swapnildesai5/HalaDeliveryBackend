@@ -3,6 +3,7 @@
     <x-details.item title="{{ __('Status') }}" text="{{ $selectedModel->status ?? '' }}" />
     <x-details.item title="{{ __('Payment Status') }}" text="{{ $selectedModel->payment_status ?? '' }}" />
     <x-details.item title="{{ __('Payment Method') }}" text="{{ $selectedModel->payment_method->name ?? '' }}" />
+    <x-details.item title="{{ __('Collect Payment From') }}" text="{{ ($selectedModel->payer ?? 1) ? __('Sender') : 'Receiver' }}" />
 </div>
 <div class="grid grid-cols-1 gap-4 mt-5 border-t md:grid-cols-2 lg:grid-cols-3">
     <x-details.item title="{{ $selectedModel != null && $selectedModel->is_package ? __('Sender')  : __('User') }}" text="{{ $selectedModel->user->name ?? '' }}" />

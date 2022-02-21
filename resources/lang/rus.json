@@ -816,5 +816,8 @@
   "Re-ordering not allowed in demo": "Повторный заказ не разрешен в демоверсии",
   "Allow partners(Driver, Vendor) account registration": "Разрешить регистрацию учетной записи партнеров (водителя, поставщика)",
   "Registration Page Not available": "Страница регистрации Недоступна",
-  "Partner account registration is currently unavailable. Please stay tune\/contact support regarding further instruction about registering for a partners account. Thank you": "Регистрация партнерской учетной записи в настоящее время недоступна. Пожалуйста, следите за обновлениями\/свяжитесь со службой поддержки для получения дальнейших инструкций по регистрации партнерской учетной записи. Спасибо"
+  "Partner account registration is currently unavailable. Please stay tune\/contact support regarding further instruction about registering for a partners account. Thank you": "Регистрация партнерской учетной записи в настоящее время недоступна. Пожалуйста, следите за обновлениями\/свяжитесь со службой поддержки для получения дальнейших инструкций по регистрации партнерской учетной записи. Спасибо",
+  "Payer": "Платить",
+  "Collect Payment From": "Получить платеж от",
+  "Receiver": "Получатель"
 }

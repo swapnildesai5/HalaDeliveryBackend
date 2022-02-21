@@ -135,9 +135,9 @@ class VendorController extends Controller
                         }, 'menus.products' => function ($query) use ($vendorId) {
                             return $query->withoutAppends()->where('is_active', 1)->where('vendor_id', $vendorId);
                         }, 'categories' => function ($query) use ($vendorId) {
-                            return $query->inorder();
+                            return $query->inorder()->whereHas('products')->orWhereHas('sub_categories');
                         }, 'categories.sub_categories' => function ($query) use ($vendorId) {
-                            return $query->inorder();
+                            return $query->inorder()->whereHas('products');
                         }, 'categories.sub_categories.products' => function ($query) use ($vendorId) {
                             return $query->withoutAppends()->where('is_active', 1)->where('vendor_id', $vendorId);
                         },

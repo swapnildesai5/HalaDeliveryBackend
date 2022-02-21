@@ -818,5 +818,8 @@
   "Re-ordering not allowed in demo": "Nachbestellung in Demo nicht erlaubt",
   "Allow partners(Driver, Vendor) account registration": "Kontoregistrierung von Partnern (Fahrer, Verkäufer) zulassen",
   "Registration Page Not available": "Registrierungsseite Nicht verfügbar",
-  "Partner account registration is currently unavailable. Please stay tune\/contact support regarding further instruction about registering for a partners account. Thank you": "Die Registrierung eines Partnerkontos ist derzeit nicht verfügbar. Bitte bleiben Sie am Ball\/wenden Sie sich an den Support, um weitere Anweisungen zur Registrierung für ein Partnerkonto zu erhalten. Danke"
+  "Partner account registration is currently unavailable. Please stay tune\/contact support regarding further instruction about registering for a partners account. Thank you": "Die Registrierung eines Partnerkontos ist derzeit nicht verfügbar. Bitte bleiben Sie am Ball\/wenden Sie sich an den Support, um weitere Anweisungen zur Registrierung für ein Partnerkonto zu erhalten. Danke",
+  "Payer": "Zahlen",
+  "Collect Payment From": "Zahlung einziehen von",
+  "Receiver": "Empfänger"
 }

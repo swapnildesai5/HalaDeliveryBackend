@@ -824,5 +824,8 @@
   "Re-ordering not allowed in demo": "သရုပ်ပြတွင် ပြန်လည်မှာယူခြင်းကို ခွင့်မပြုပါ။",
   "Allow partners(Driver, Vendor) account registration": "ပါတနာများ (ယာဉ်မောင်း၊ ရောင်းချသူ) အကောင့်မှတ်ပုံတင်ခြင်းကို ခွင့်ပြုပါ။",
   "Registration Page Not available": "မှတ်ပုံတင်ခြင်းစာမျက်နှာ မရရှိနိုင်ပါ။",
-  "Partner account registration is currently unavailable. Please stay tune\/contact support regarding further instruction about registering for a partners account. Thank you": "ပါတနာအကောင့်မှတ်ပုံတင်ခြင်းကို လောလောဆယ် မရရှိနိုင်ပါ။ ပါတနာအကောင့်တစ်ခုအတွက် စာရင်းသွင်းခြင်းဆိုင်ရာ နောက်ထပ်လမ်းညွှန်ချက်နှင့်ပတ်သက်၍ ကျေးဇူးပြု၍ ကျေးဇူးပြု၍ ဆက်သွယ်ပါ\/ပံ့ပိုးကူညီပါ။ ကျေးဇူးတင်ပါတယ်"
+  "Partner account registration is currently unavailable. Please stay tune\/contact support regarding further instruction about registering for a partners account. Thank you": "ပါတနာအကောင့်မှတ်ပုံတင်ခြင်းကို လောလောဆယ် မရရှိနိုင်ပါ။ ပါတနာအကောင့်တစ်ခုအတွက် စာရင်းသွင်းခြင်းဆိုင်ရာ နောက်ထပ်လမ်းညွှန်ချက်နှင့်ပတ်သက်၍ ကျေးဇူးပြု၍ ကျေးဇူးပြု၍ ဆက်သွယ်ပါ\/ပံ့ပိုးကူညီပါ။ ကျေးဇူးတင်ပါတယ်",
+  "Payer": "ပေးဆပ်ပါ။",
+  "Collect Payment From": "ငွေပေးချေမှုကို စုဆောင်းပါ။",
+  "Receiver": "လက်ခံသူ"
 }

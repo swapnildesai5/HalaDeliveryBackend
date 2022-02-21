@@ -1,7 +1,9 @@
 <?php
 
 return [
-
+    //DON'T TEMPER WITH THE app_id value
+    'app_id' => "lEmGS1ME4D",
+    //
     'colors' => [
         "pending" => "#18d3ec",
         "failed" => "#e45e5e",
@@ -24,6 +26,8 @@ return [
         "Turkish",
         "Russian",
         "Burmese",
+        "Chinese",
+        "Japanese"
     ],
     "languageCodes" => [
         "en",
@@ -36,7 +40,9 @@ return [
         "hi",
         "tr",
         "rus",
-        "my"
+        "my",
+        "zh",
+        "ja",
     ],
     "support" => [
         "email" => "info@edentech.online"

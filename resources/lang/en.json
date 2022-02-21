@@ -816,5 +816,8 @@
   "Re-ordering not allowed in demo": "Re-ordering not allowed in demo",
   "Allow partners(Driver, Vendor) account registration": "Allow partners(Driver, Vendor) account registration",
   "Registration Page Not available": "Registration Page Not available",
-  "Partner account registration is currently unavailable. Please stay tune\/contact support regarding further instruction about registering for a partners account. Thank you": "Partner account registration is currently unavailable. Please stay tune\/contact support regarding further instruction about registering for a partners account. Thank you"
+  "Partner account registration is currently unavailable. Please stay tune\/contact support regarding further instruction about registering for a partners account. Thank you": "Partner account registration is currently unavailable. Please stay tune\/contact support regarding further instruction about registering for a partners account. Thank you",
+  "Payer": "Payer",
+  "Collect Payment From": "Collect Payment From",
+  "Receiver": "Receiver"
 }

@@ -816,5 +816,8 @@
   "Re-ordering not allowed in demo": "Demoda yeniden siparişe izin verilmiyor",
   "Allow partners(Driver, Vendor) account registration": "Ortaklara (Sürücü, Satıcı) hesap kaydına izin ver",
   "Registration Page Not available": "Kayıt Sayfası Mevcut değil",
-  "Partner account registration is currently unavailable. Please stay tune\/contact support regarding further instruction about registering for a partners account. Thank you": "İş ortağı hesabı kaydı şu anda kullanılamıyor. Lütfen bir iş ortağı hesabına kaydolmayla ilgili daha fazla talimat için bizi izlemeye devam edin\/desteğe başvurun. Teşekkür ederim"
+  "Partner account registration is currently unavailable. Please stay tune\/contact support regarding further instruction about registering for a partners account. Thank you": "İş ortağı hesabı kaydı şu anda kullanılamıyor. Lütfen bir iş ortağı hesabına kaydolmayla ilgili daha fazla talimat için bizi izlemeye devam edin\/desteğe başvurun. Teşekkür ederim",
+  "Payer": "Ödemek",
+  "Collect Payment From": "Şuradan Ödeme Alın",
+  "Receiver": "Alıcı"
 }

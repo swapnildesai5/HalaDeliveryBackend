@@ -816,5 +816,8 @@
   "Re-ordering not allowed in demo": "डेमो में पुन: आदेश देने की अनुमति नहीं है",
   "Allow partners(Driver, Vendor) account registration": "भागीदारों (चालक, विक्रेता) खाता पंजीकरण की अनुमति दें",
   "Registration Page Not available": "पंजीकरण पृष्ठ उपलब्ध नहीं है",
-  "Partner account registration is currently unavailable. Please stay tune\/contact support regarding further instruction about registering for a partners account. Thank you": "भागीदार खाता पंजीकरण वर्तमान में अनुपलब्ध है। पार्टनर खाते के लिए पंजीकरण करने के बारे में आगे के निर्देश के संबंध में कृपया बने रहें\/समर्थन से संपर्क करें। शुक्रिया"
+  "Partner account registration is currently unavailable. Please stay tune\/contact support regarding further instruction about registering for a partners account. Thank you": "भागीदार खाता पंजीकरण वर्तमान में अनुपलब्ध है। पार्टनर खाते के लिए पंजीकरण करने के बारे में आगे के निर्देश के संबंध में कृपया बने रहें\/समर्थन से संपर्क करें। शुक्रिया",
+  "Payer": "वेतन",
+  "Collect Payment From": "से भुगतान लीजिए",
+  "Receiver": "रिसीवर"
 }

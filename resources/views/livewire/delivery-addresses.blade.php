@@ -1,7 +1,7 @@
 @section('title',  __('Delivery Address') )
 <div>
 
-    <x-baseview title="{{ __('Delivery Address') }}">
+    <x-baseview title="{{ __('Delivery Address') }}" :showNew="true">
         <livewire:tables.delivery-address-table />
     </x-baseview>
 

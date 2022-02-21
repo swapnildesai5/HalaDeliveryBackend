@@ -824,5 +824,8 @@
   "Re-ordering not allowed in demo": "데모에서는 재주문이 허용되지 않습니다.",
   "Allow partners(Driver, Vendor) account registration": "파트너(드라이버, 벤더) 계정 등록 허용",
   "Registration Page Not available": "등록 페이지 이용 불가",
-  "Partner account registration is currently unavailable. Please stay tune\/contact support regarding further instruction about registering for a partners account. Thank you": "파트너 계정 등록은 현재 사용할 수 없습니다. 파트너 계정 등록에 대한 추가 지침은 계속 지켜봐 주십시오\/지원팀에 문의하십시오. 감사합니다"
+  "Partner account registration is currently unavailable. Please stay tune\/contact support regarding further instruction about registering for a partners account. Thank you": "파트너 계정 등록은 현재 사용할 수 없습니다. 파트너 계정 등록에 대한 추가 지침은 계속 지켜봐 주십시오\/지원팀에 문의하십시오. 감사합니다",
+  "Payer": "지불",
+  "Collect Payment From": "다음에서 지불 수금",
+  "Receiver": "수화기"
 }

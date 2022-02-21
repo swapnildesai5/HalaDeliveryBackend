@@ -101,7 +101,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/ambrosethebuild/envato-purchase-code-verifier",
-                "reference": "40c9c29efad04faae88714288015d252893d6c65"
+                "reference": "cf78de2fd148daa645dc608a428056a25009fc31"
             },
             "require": {
                 "anlutro/l4-settings": "^1.0",
@@ -133,7 +133,7 @@
                 }
             ],
             "description": "For verifying laravel project purchase code from envato",
-            "time": "2022-02-03T20:01:43+00:00"
+            "time": "2022-02-20T00:04:59+00:00"
         },
         {
             "name": "anandsiddharth/laravel-paytm-wallet",

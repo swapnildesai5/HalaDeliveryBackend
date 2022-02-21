@@ -43,8 +43,8 @@ class AutoCancelAutoAssign extends Command
 
 
         //
-        $secondsFromNowAgo = Carbon::now()->subSeconds(setting('alertDuration', 60) * 2)->toTimeString();
-        $autoAssignments = AutoAssignment::where('status', 'pending')->whereTime('updated_at', '<', $secondsFromNowAgo)->limit(10)->get();
+        $secondsFromNowAgo = Carbon::now()->subSeconds(setting('alertDuration', 60) * 2)->format('Y-m-d h:i:s');
+        $autoAssignments = AutoAssignment::where('status', 'pending')->whereDate('updated_at', '<', $secondsFromNowAgo)->limit(10)->get();
         //loop through and delte the records while also sending notification to the driver
         foreach ($autoAssignments as $autoAssignment) {
             //driver 
@@ -69,8 +69,8 @@ class AutoCancelAutoAssign extends Command
         $clearRejectedAutoAssignment = ((int)setting('clearRejectedAutoAssignment', 0)) ?? 0;
 
         if ($clearRejectedAutoAssignment > 0) {
-            $minutesFromNowAgo = Carbon::now()->subMinutes($clearRejectedAutoAssignment)->toTimeString();
-            $deletedAutoAssignments = AutoAssignment::whereTime('updated_at', '<', $minutesFromNowAgo)->limit(20)->delete();
+            $minutesFromNowAgo = Carbon::now()->subMinutes($clearRejectedAutoAssignment)->format('Y-m-d h:i:s');
+            $deletedAutoAssignments = AutoAssignment::whereDate('updated_at', '<', $minutesFromNowAgo)->limit(20)->delete();
         }
         return 0;
     }

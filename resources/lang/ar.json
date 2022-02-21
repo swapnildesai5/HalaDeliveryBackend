@@ -824,5 +824,8 @@
   "Re-ordering not allowed in demo": "إعادة الطلب غير مسموح به في العرض",
   "Allow partners(Driver, Vendor) account registration": "السماح بتسجيل حساب الشركاء (السائق ، البائع)",
   "Registration Page Not available": "صفحة التسجيل غير متوفرة",
-  "Partner account registration is currently unavailable. Please stay tune\/contact support regarding further instruction about registering for a partners account. Thank you": "تسجيل حساب الشريك غير متاح حاليًا. يرجى البقاء على اتصال \/ الاتصال بالدعم فيما يتعلق بالمزيد من التعليمات حول التسجيل للحصول على حساب الشركاء. شكرا لك"
+  "Partner account registration is currently unavailable. Please stay tune\/contact support regarding further instruction about registering for a partners account. Thank you": "تسجيل حساب الشريك غير متاح حاليًا. يرجى البقاء على اتصال \/ الاتصال بالدعم فيما يتعلق بالمزيد من التعليمات حول التسجيل للحصول على حساب الشركاء. شكرا لك",
+  "Payer": "يدفع",
+  "Collect Payment From": "تحصيل المدفوعات من",
+  "Receiver": "المتلقي"
 }

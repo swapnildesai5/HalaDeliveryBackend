@@ -12,7 +12,7 @@ class PackageTypeController extends Controller
 
     //
     public function index(Request $request){
-        return PackageType::active()->inorder()->get();
+        return PackageType::withCount('package_type_pricings')->active()->inorder()->get();
     }
 
 

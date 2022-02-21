@@ -35,13 +35,13 @@ class CreateOrdersTable extends Migration
             $table->double('width', 10, 2)->default(0);
             $table->double('length', 10, 2)->default(0);
             $table->double('height', 10, 2)->default(0);
+            $table->boolean('payer')->default(true);
             //end package delivery columns
-
-
             $table->foreignId('payment_method_id')->nullable()->constrained();
             $table->foreignId('vendor_id')->nullable()->constrained();
             $table->foreignId('user_id')->constrained();
             $table->foreignId('driver_id')->nullable()->constrained("users");
+            
             $table->timestamps();
             $table->softDeletes();
         });
