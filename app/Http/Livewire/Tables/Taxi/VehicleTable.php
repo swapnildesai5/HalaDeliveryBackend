@@ -26,7 +26,7 @@ class VehicleTable extends BaseDataTableComponent
             Column::make(__('Car Make'),'car_model.car_make.name')->searchable(),
             Column::make(__('Car Model'),'car_model.name')->searchable(),
             $this->activeColumn(),
-            $this->actionsColumn('components.buttons.primary_actions'),
+            $this->actionsColumn('components.buttons.crud_actions'),
         ];
     }
 }

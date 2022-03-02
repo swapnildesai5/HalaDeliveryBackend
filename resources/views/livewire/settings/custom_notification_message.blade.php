@@ -21,7 +21,7 @@
                 <x-input title="{{ __('Preparing') }}" name="managerPreparingMssage" />
                 <x-input title="{{ __('Enroute') }}" name="managerEnrouteMsg" />
             </div>
-            <x-buttons.primary title="Save Changes" />
+            <x-buttons.primary title="{{ __('Save Changes') }}" />
 
 
         </x-form>

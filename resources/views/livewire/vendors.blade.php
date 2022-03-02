@@ -308,7 +308,7 @@
         <x-modal-lg>
 
             <p class="text-xl font-semibold">
-                {{ $selectedModel != null ? $selectedModel->name."'s" : '' }}
+                {{ $selectedModel != null ? $selectedModel->name : '' }}
                 {{ __('Details') }}</p>
             <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
                 <x-details.item title="{{ __('Name') }}" text="{{ $selectedModel->name ?? '' }}" />

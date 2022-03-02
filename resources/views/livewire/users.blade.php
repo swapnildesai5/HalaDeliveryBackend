@@ -53,8 +53,8 @@
         <x-modal>
 
             <p class="text-xl font-semibold">
-                {{ $selectedModel != null ? $selectedModel->name."'s" : '' }}
-                Details</p>
+                {{ $selectedModel != null ? $selectedModel->name : '' }}
+                {{ __("Details") }}</p>
             <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
                 <x-details.item title="{{ __('Name') }}" text="{{ $selectedModel->name ?? '' }}" />
                 @production
@@ -65,6 +65,7 @@
                 <x-details.item title="{{ __('Email') }}" text="{{ Str::padLeft('', Str::of($selectedModel->email ?? '')->length(), '*') }}" />
                 @endproduction
 
+                <x-details.item title="{{ __('Referral Code') }}" text="{{ $selectedModel->code ?? '' }}" />
                 <x-details.item title="{{ __('Wallet') }}" text="{{ currencyFormat($selectedModel->wallet->balance ?? 0.00) }}" />
                 @if (($selectedModel->role_name ?? '') == "driver")
                 <x-details.item title="{{ __('Commission') }}%" text="{{ $selectedModel->commission ?? '' }}" />

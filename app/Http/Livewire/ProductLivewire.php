@@ -79,6 +79,9 @@ class ProductLivewire extends BaseLivewireComponent
 
     public function save()
     {
+        if(empty($this->vendorID)){
+            $this->vendorID = \Auth::user()->vendor_id;
+        }
         //validate
         $this->validate();
 
@@ -95,7 +98,7 @@ class ProductLivewire extends BaseLivewireComponent
             $model->unit = $this->unit;
             $model->package_count = $this->package_count;
             $model->available_qty = !empty($this->available_qty) ? $this->available_qty : null;
-            $model->vendor_id = $this->vendorID;
+            $model->vendor_id = $this->vendorID ?? \Auth::user()->vendor_id;
             $model->featured = false;
             $model->plus_option = $this->plus_option ?? true;
             $model->deliverable = $this->deliverable;

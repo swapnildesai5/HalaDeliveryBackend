@@ -30,6 +30,7 @@ use App\Observers\PayoutObserver;
 use App\Observers\ProductObserver;
 use App\Observers\ServiceObserver;
 use App\Observers\VendorObserver;
+use App\Observers\ReferralObserver;
 
 class EventServiceProvider extends ServiceProvider
 {
@@ -66,10 +67,12 @@ class EventServiceProvider extends ServiceProvider
         User::observe(TaxiDriverObserver::class);
         Order::observe(TaxiOrderObserver::class);
         Vehicle::observe(VehicleObserver::class);
-
+        
         //Subscription qty checks
         Product::observe(ProductObserver::class);
         Service::observe(ServiceObserver::class);
         PackageType::observe(PackageTypeObserver::class);
+        //
+        Order::observe(ReferralObserver::class);
     }
 }

@@ -22,9 +22,9 @@ class AppSettingsController extends Controller
         $vendorTypes = VendorType::active()->get();
         $showKeys = true;
         $versionCode = (int) setting('appVerisonCode', 1);
-        if ($versionCode > 31) {
-            $showKeys = \Auth::guard('api')->user() != null;
-        }
+        // if ($versionCode > 31) {
+        //     $showKeys = \Auth::guard('api')->user() != null;
+        // }
 
         return response()->json([
 
@@ -44,6 +44,7 @@ class AppSettingsController extends Controller
                 "enableDriverWallet" => setting('enableDriverWallet', "0"),
                 "enableGroceryMode" => setting('enableGroceryMode', "0"),
                 "enableReferSystem" => setting('enableReferSystem', "0"),
+                "referAmount" => setting('referRewardAmount', "0"),
                 "enableChat" => setting('enableChat', "1"),
                 "enableOrderTracking" => setting('enableOrderTracking', 1),
                 "enableUploadPrescription" => setting('enableUploadPrescription', 1),

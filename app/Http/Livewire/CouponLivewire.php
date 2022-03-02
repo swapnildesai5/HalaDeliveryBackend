@@ -24,6 +24,8 @@ class CouponLivewire extends BaseLivewireComponent
     public $percentage;
     public $expires_on;
     public $times;
+    public $min_order_amount;
+    public $max_coupon_amount;
     public $isActive = 1;
     public $productIDS;
     public $vendorsIDS;
@@ -79,6 +81,8 @@ class CouponLivewire extends BaseLivewireComponent
             $model->code = $this->code;
             $model->description = $this->description;
             $model->discount = $this->discount;
+            $model->min_order_amount = $this->min_order_amount;
+            $model->max_coupon_amount = $this->max_coupon_amount;
             $model->percentage = $this->percentage ?? false;
             $model->expires_on = $this->expires_on;
             $model->times = $this->times;
@@ -108,6 +112,8 @@ class CouponLivewire extends BaseLivewireComponent
         $this->code = $this->selectedModel->code;
         $this->description = $this->selectedModel->description;
         $this->discount = $this->selectedModel->discount;
+        $this->min_order_amount = $this->selectedModel->min_order_amount;
+        $this->max_coupon_amount = $this->selectedModel->max_coupon_amount;
         $this->percentage = $this->selectedModel->percentage;
         $this->expires_on = $this->selectedModel->expires_on;
         $this->times = $this->selectedModel->times;
@@ -142,6 +148,8 @@ class CouponLivewire extends BaseLivewireComponent
             $model->percentage = $this->percentage;
             $model->expires_on = $this->expires_on;
             $model->times = $this->times;
+            $model->min_order_amount = $this->min_order_amount;
+            $model->max_coupon_amount = $this->max_coupon_amount;
             $model->is_active = $this->isActive;
             $model->save();
 

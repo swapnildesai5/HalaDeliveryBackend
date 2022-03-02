@@ -59,7 +59,7 @@ class VehicleTypeController extends Controller
             }
             //
             $vehicleTypes = $vehicleTypes->map(function ($vehicleType, $key) use ($request) {
-                $vehicleType->total = $this->getTaxiOrderTotalPrice($vehicleType, $request->pickup, $request->dropoff);
+                $vehicleType->total = currencyValueFormat($this->getTaxiOrderTotalPrice($vehicleType, $request->pickup, $request->dropoff));
                 return $vehicleType;
             });
         }

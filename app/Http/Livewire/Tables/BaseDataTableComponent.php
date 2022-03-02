@@ -11,7 +11,7 @@ class BaseDataTableComponent extends DataTableComponent
 {
 
     use DataTableTrait;
-    public array $perPageAccepted = [5, 10, 15, 20];
+    public array $perPageAccepted = [5, 10, 15, 20, 50, 100];
     public $checkDemo = false;
     public string $defaultSortColumn = 'id';
     public string $defaultSortDirection = 'desc';
@@ -79,12 +79,13 @@ class BaseDataTableComponent extends DataTableComponent
     {
         $this->selectedModel = $this->model::find($id);
 
-        $this->confirm('Activate', [
+        $this->confirm(__('Activate'), [
             'toast' => false,
             'text' =>  __('Are you sure you want to activate the selected data?'),
             'position' => 'center',
             'showConfirmButton' => true,
             'cancelButtonText' => __("Cancel"),
+            'confirmButtonText' => __("Yes"),
             'onConfirmed' => 'activateModel',
             'onCancelled' => 'cancelled'
         ]);
@@ -94,12 +95,13 @@ class BaseDataTableComponent extends DataTableComponent
     {
         $this->selectedModel = $this->model::find($id);
 
-        $this->confirm('Deactivate', [
+        $this->confirm(__('Deactivate'), [
             'toast' => false,
             'text' =>  __('Are you sure you want to deactivate the selected data?'),
             'position' => 'center',
             'showConfirmButton' => true,
             'cancelButtonText' => __("Cancel"),
+            'confirmButtonText' => __("Yes"),
             'onConfirmed' => 'deactivateModel',
             'onCancelled' => 'cancelled'
         ]);
@@ -109,12 +111,13 @@ class BaseDataTableComponent extends DataTableComponent
     {
         $this->selectedModel = $this->model::find($id);
 
-        $this->confirm('Delete', [
+        $this->confirm(__('Delete'), [
             'toast' => false,
             'text' =>  __('Are you sure you want to delete the selected data?'),
             'position' => 'center',
             'showConfirmButton' => true,
             'cancelButtonText' => __("Cancel"),
+            'confirmButtonText' => __("Yes"),
             'onConfirmed' => 'deleteModel',
             'onCancelled' => 'cancelled'
         ]);

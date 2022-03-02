@@ -3,30 +3,16 @@
 namespace App\Http\Livewire\Tables\Reports;
 
 use App\Exports\CustomerReportExport;
-use App\Http\Livewire\Tables\BaseDataTableComponent;
 use App\Models\Order;
 use Maatwebsite\Excel\Facades\Excel;
 
 use Rappasoft\LaravelLivewireTables\Views\Column;
 use Rappasoft\LaravelLivewireTables\Views\Filter;
 
-class CustomerReportTable extends BaseDataTableComponent
+class CustomerReportTable extends BaseReportTable
 {
 
     public $model = Order::class;
-    public array $bulkActions = [
-        'exportSelected' => 'Export',
-    ];
-
-    public array $filters = [];
-
-    public function mount()
-    {
-        $this->filters = [
-            'start_date' => now()->subDays(7)->format('Y-m-d'),
-            'end_date' => now()->format('Y-m-d'),
-        ];
-    }
 
     public function query()
     {
@@ -68,13 +54,13 @@ class CustomerReportTable extends BaseDataTableComponent
             'status' => Filter::make(__("Status"))
                 ->select([
                     '' => __('Any'),
-                    'pending' => 'Pending',
-                    'preparing' => 'Preparing',
-                    'ready' => 'Ready',
-                    'enroute' => 'Enroute',
-                    'delivered' => 'Delivered',
-                    'cancelled' => 'Cancelled',
-                    'failed' => 'Failed',
+                    'pending' => __('Pending'),
+                    'preparing' => __('Preparing'),
+                    'ready' => __('Ready'),
+                    'enroute' => __('Enroute'),
+                    'delivered' => __('Delivered'),
+                    'cancelled' => __('Cancelled'),
+                    'failed' => __('Failed'),
                 ]),
             'start_date' => Filter::make(__('Start Date'))
                 ->date([

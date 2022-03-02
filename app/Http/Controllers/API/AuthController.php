@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
+use App\Models\Referral;
 use App\Models\User;
 use App\Models\Vehicle;
 use App\Models\Vendor;
@@ -242,7 +243,12 @@ class AuthController extends Controller
                 //
                 $referringUser = User::where('code', $request->code)->first();
                 if (!empty($referringUser)) {
-                    $referringUser->topupWallet($referRewardAmount);
+                    //create the referall record
+                    $referral = new Referral();
+                    $referral->user_id = $referringUser->id;
+                    $referral->referred_user_id = $user->id;
+                    $referral->amount = $referRewardAmount;
+                    $referral->save();
                 } else {
                     throw new Exception(__("Invalid referral code"), 1);
                 }

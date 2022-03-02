@@ -36,7 +36,7 @@
                 <hr class="my-4" />
                
                 <div class='grid grid-cols-1 gap-4 md:grid-cols-2 '>
-                    <x-buttons.primary title="Save Changes" />
+                    <x-buttons.primary title="{{ __('Save Changes') }}" />
                 </div>
         </x-form>
 

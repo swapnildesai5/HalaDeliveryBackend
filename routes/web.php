@@ -99,6 +99,8 @@ use App\Http\Livewire\Report\ServiceReportLivewire;
 use App\Http\Livewire\Report\VendorReportLivewire;
 use App\Http\Livewire\Report\SubscriptionReportLivewire;
 use App\Http\Livewire\Report\CustomerReportLivewire;
+use App\Http\Livewire\Report\ReferralReportLivewire;
+use App\Http\Livewire\Report\CommissionReportLivewire;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -271,6 +273,8 @@ Route::group(['middleware' => ['web']], function () {
         Route::get('reports/services', ServiceReportLivewire::class)->name('reports.services');
         Route::get('reports/vendors', VendorReportLivewire::class)->name('reports.vendors');
         Route::get('reports/customers', CustomerReportLivewire::class)->name('reports.customers');
+        Route::get('reports/referral', ReferralReportLivewire::class)->name('reports.referral');
+        Route::get('reports/commission', CommissionReportLivewire::class)->name('reports.commission');
         
     });
 

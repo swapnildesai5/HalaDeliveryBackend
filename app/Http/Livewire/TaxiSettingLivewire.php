@@ -13,6 +13,7 @@ class TaxiSettingLivewire extends BaseLivewireComponent
     // App settings
     public $cancelPendingTaxiOrderTime;
     public $drivingSpeed;
+    public $taxiMaxScheduleDays;
     public $pending;
     public $preparing;
     public $ready;
@@ -21,12 +22,14 @@ class TaxiSettingLivewire extends BaseLivewireComponent
     public $cancelled;
     public $failed;
     public $multipleCurrency;
+    public $canScheduleTaxiOrder;
 
 
     public function mount()
     {
         $this->cancelPendingTaxiOrderTime = setting('taxi.cancelPendingTaxiOrderTime', 2);
         $this->drivingSpeed = setting('taxi.drivingSpeed', 50);
+        $this->taxiMaxScheduleDays = setting('taxi.taxiMaxScheduleDays', 3);
         $this->pending = setting('taxi.msg.pending', "");
         $this->preparing = setting('taxi.msg.preparing', "");
         $this->ready = setting('taxi.msg.ready', "");
@@ -35,6 +38,7 @@ class TaxiSettingLivewire extends BaseLivewireComponent
         $this->cancelled = setting('taxi.msg.cancelled', "");
         $this->failed = setting('taxi.msg.failed', "");
         $this->multipleCurrency = (bool) setting('taxi.multipleCurrency', false);
+        $this->canScheduleTaxiOrder = (bool) setting('taxi.canScheduleTaxiOrder', false);
         
     }
 
@@ -65,6 +69,8 @@ class TaxiSettingLivewire extends BaseLivewireComponent
                 'taxi.msg.cancelled' =>  $this->cancelled,
                 'taxi.msg.failed' =>  $this->failed,
                 'taxi.multipleCurrency' =>  $this->multipleCurrency,
+                'taxi.canScheduleTaxiOrder' =>  $this->canScheduleTaxiOrder,
+                'taxi.taxiMaxScheduleDays' =>  $this->taxiMaxScheduleDays,
             ];
 
             // update the site name

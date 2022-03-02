@@ -66,6 +66,7 @@ class OrderLivewire extends NewOrderLivewire
         $this->selectedModel = $this->model::find($id);
         $this->orderId = $id;
         $this->showDetails = true;
+        $this->stopRefresh = true;
     }
 
     // Updating model

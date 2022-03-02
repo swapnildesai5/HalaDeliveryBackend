@@ -268,7 +268,7 @@ trait FirebaseMessagingTrait
 
         //order data
         $orderData = [
-            'is_order' => "1",
+            'is_order' => "0",
             'order_id' => (string)$order->id,
             'status' => $order->status,
         ];
@@ -342,6 +342,11 @@ trait FirebaseMessagingTrait
             'order_id' => (string)$order->id,
             'status' => $order->status,
         ];
+
+        //aviod send order details notification data when order is taxi
+        if(!empty($order->taxi_order) ){
+            $orderData["is_order"] = "0";
+        }
 
         //
         $this->sendFirebaseNotification(

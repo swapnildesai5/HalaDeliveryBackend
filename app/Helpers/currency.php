@@ -25,3 +25,17 @@ function currencyFormat($value, $currency = null)
     }
     
 }
+
+function currencyValueFormat($value)
+{
+
+    //format currency
+    $value = number_format(
+        (float) $value, 
+        setting('ui.currency.decimals', 2), 
+        setting('ui.currency.decimal_format', "."), 
+        setting('ui.currency.format', ",")
+    );
+    return (double)$value;
+    
+}

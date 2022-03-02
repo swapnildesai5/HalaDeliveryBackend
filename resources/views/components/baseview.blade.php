@@ -6,6 +6,9 @@
             <x-buttons.new title="{{ $actionTitle ?? ''  }}" />
         @endif
     </div>
+    @if ($newInfo ?? false)
+    <p class="mb-4 text-xs font-light">{{ __('Note: Please login as vendor manager to be able create new data') }}</p>
+    @endif
     {{-- list --}}
     {{ $slot }}
 

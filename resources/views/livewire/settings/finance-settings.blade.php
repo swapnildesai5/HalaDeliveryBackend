@@ -71,7 +71,7 @@
                 </div>
 
 
-                <x-buttons.primary title="Save Changes" />
+                <x-buttons.primary title="{{ __('Save Changes') }}" />
                 <div>
         </x-form>
 

@@ -49,7 +49,7 @@ class AutoCancelOrder extends Command
         $timeZone = setting('timeZone', 'UTC');
         $expireDateTime = \Carbon\Carbon::now()->timezone($timeZone)->subMinutes($cancelTime)->format('Y-m-d h:i:s');
         //get orders pending for more the ``autoCancelPendingOrderTime``
-        $orders = Order::currentStatus('pending')->whereDoesntHave('taxi_order')->whereDate('updated_at', '<=', $expireDateTime)->limit(20)->get();
+        $orders = Order::currentStatus('pending')->whereDoesntHave('taxi_order')->whereTime('updated_at', '<=', $expireDateTime)->limit(20)->get();
         
         foreach ($orders as $order) {
             $order->setStatus('cancelled');

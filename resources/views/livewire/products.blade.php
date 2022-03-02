@@ -60,7 +60,6 @@
 
 
             <x-checkbox title="{{ __('Active') }}" name="isActive" :defer="false" />
-
         </x-modal-lg>
     </div>
 

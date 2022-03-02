@@ -173,6 +173,7 @@ class NotificationLivewire extends BaseLivewireComponent
             $this->emit('refreshTable');
         } catch (Exception $error) {
             \DB::rollback();
+            logger("notification error", [$error]);
             $this->showErrorAlert($error->getMessage() ?? __("Notification failed"));
         }
     }

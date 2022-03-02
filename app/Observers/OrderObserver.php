@@ -133,7 +133,7 @@ class OrderObserver
         if (
             in_array($order->status, ["pending", "preparing"])
             && ($packageTypePricing->auto_assignment ?? 0)
-            && ($order->payment_method->is_cash || $order->payment_status == "successful")
+            && ($order->payment_method != null && $order->payment_method->is_cash || $order->payment_status == "successful")
         ) {
             // logger("Auto move to ready kicked in");
             $order->setStatus("ready");
@@ -146,7 +146,7 @@ class OrderObserver
         if (
             in_array($order->status, ["pending"])
             && ($order->vendor->auto_accept ?? 0)
-            && ($order->payment_method->is_cash || $order->payment_status == "successful")
+            && ($order->payment_method != null && $order->payment_method->is_cash || $order->payment_status == "successful")
         ) {
             $order->setStatus("preparing");
         }

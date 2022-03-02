@@ -20,7 +20,7 @@
                 {{-- <textarea id="privacyPolicy" class="w-7/12 h-screen"></textarea> --}}
 
                 <textarea id="privacyPolicy" wire:model.defer="privacyPolicy" class="w-full h-screen p-2 border border-black rounded-sm"></textarea>
-                <x-buttons.primary title="Save Changes" />
+                <x-buttons.primary title="{{ __('Save Changes') }}" />
 
                 <div>
         </x-form>

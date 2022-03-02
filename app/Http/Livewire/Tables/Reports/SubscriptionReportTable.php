@@ -3,31 +3,16 @@
 namespace App\Http\Livewire\Tables\Reports;
 
 use App\Exports\SubscriptionReportExport;
-use App\Http\Livewire\Tables\BaseDataTableComponent;
 use App\Models\Subscription;
 use Maatwebsite\Excel\Facades\Excel;
 
 use Rappasoft\LaravelLivewireTables\Views\Column;
 use Rappasoft\LaravelLivewireTables\Views\Filter;
 
-class SubscriptionReportTable extends BaseDataTableComponent
+class SubscriptionReportTable extends BaseReportTable
 {
 
     public $model = Subscription::class;
-    public array $bulkActions = [
-        'exportSelected' => 'Export',
-    ];
-
-    public array $filters = [];
-
-    public function mount()
-    {
-        $this->filters = [
-            'start_date' => now()->subDays(7)->format('Y-m-d'),
-            'end_date' => now()->format('Y-m-d'),
-        ];
-    }
-
     public function query()
     {
         //

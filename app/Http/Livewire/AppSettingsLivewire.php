@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Order;
 use App\Models\SmsGateway;
 use Exception;
 use LVR\Colour\Hex;
@@ -80,6 +81,8 @@ class AppSettingsLivewire extends BaseLivewireComponent
     public $bannerHeight;
     public $allowVendorCreateDrivers;
     public $showVendorTypeImageOnly;
+    public $statuses = [];
+    public $autoassignmentStatus;
 
     //
     public $smsGateways = [];
@@ -148,6 +151,7 @@ class AppSettingsLivewire extends BaseLivewireComponent
         $this->allowVendorCreateDrivers = (bool) setting('allowVendorCreateDrivers');
         $this->showVendorTypeImageOnly = (bool) setting('showVendorTypeImageOnly');
         $this->partnersCanRegister = (bool) setting('partnersCanRegister', true);
+        $this->autoassignmentStatus =  setting('autoassignment_status', "ready");
 
         //
         $this->accentColor = setting('appColorTheme.accentColor', '#64bda1');
@@ -173,6 +177,9 @@ class AppSettingsLivewire extends BaseLivewireComponent
         $this->cancelledColor = setting('appColorTheme.cancelledColor', '#808080');
         $this->deliveredColor = setting('appColorTheme.deliveredColor', '#01A368');
         $this->successfulColor = setting('appColorTheme.successfulColor', '#01A368');
+
+        //
+        $this->statuses = Order::getPossibleStatues();
 
         
     }
@@ -235,6 +242,7 @@ class AppSettingsLivewire extends BaseLivewireComponent
                 'allowVendorCreateDrivers' =>  $this->allowVendorCreateDrivers,
                 'showVendorTypeImageOnly' =>  $this->showVendorTypeImageOnly,
                 'partnersCanRegister' =>  $this->partnersCanRegister,
+                'autoassignment_status' =>  $this->autoassignmentStatus,
 
                 'enableGroceryMode' =>  $this->enableGroceryMode,
                 'enableReferSystem' =>  $this->enableReferSystem,

@@ -163,6 +163,9 @@
                     <div class="block mt-4 text-sm">
                         <x-input title="{{ __('Location Update Time(Seconds)') }}" name="timePassLocationUpdate" />
                     </div>
+                    <div class="block mt-4 text-sm">
+                        <x-select title="{{ __('Auto-Assignment Status') }}" :options="$statuses ?? []" name="autoassignmentStatus" />
+                    </div>
                 </div>
                 
 
@@ -203,7 +206,7 @@
                     <x-input title="Delivered Color" name="deliveredColor" type="color" class="h-10" />
                     <x-input title="Successful Color" name="successfulColor" type="color" class="h-10" />
                 </div>
-                <x-buttons.primary title="Save Changes" />
+                <x-buttons.primary title="{{ __('Save Changes') }}" />
                 <div>
         </x-form>
 

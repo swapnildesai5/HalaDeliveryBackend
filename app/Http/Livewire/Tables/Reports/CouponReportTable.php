@@ -3,21 +3,17 @@
 namespace App\Http\Livewire\Tables\Reports;
 
 use App\Exports\CouponsExport;
-use App\Http\Livewire\Tables\BaseDataTableComponent;
 use App\Models\CouponUser;
 use Maatwebsite\Excel\Facades\Excel;
 
 use Rappasoft\LaravelLivewireTables\Views\Column;
 use Rappasoft\LaravelLivewireTables\Views\Filter;
 
-class CouponReportTable extends BaseDataTableComponent
+class CouponReportTable extends BaseReportTable
 {
 
     public $model = CouponUser::class;
-    public array $bulkActions = [
-        'exportSelected' => 'Export',
-    ];
-
+ 
     public function query()
     {
         return CouponUser::with(['user', 'coupon', 'order' => function ($query) {

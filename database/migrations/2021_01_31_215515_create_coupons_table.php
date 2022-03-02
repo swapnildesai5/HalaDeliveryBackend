@@ -18,6 +18,8 @@ class CreateCouponsTable extends Migration
             $table->string('code');
             $table->text('description')->nullable();
             $table->double('discount', 8, 2)->default(0);
+            $table->double('min_order_amount', 8, 2)->nullable();
+            $table->double('max_coupon_amount', 8, 2)->nullable();
             $table->boolean('percentage')->default(true);
             $table->date('expires_on')->default(now());
             $table->integer('times')->nullable();

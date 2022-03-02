@@ -78,12 +78,13 @@ class BaseTableComponent extends TableComponent
     {
         $this->selectedModel = $this->model::find($id);
 
-        $this->confirm('Activate', [
+        $this->confirm(__('Activate'), [
             'toast' => false,
             'text' =>  __('Are you sure you want to activate the selected data?'),
             'position' => 'center',
             'showConfirmButton' => true,
             'cancelButtonText' => __("Cancel"),
+            'confirmButtonText' => __("Yes"),
             'onConfirmed' => 'activateModel',
             'onCancelled' => 'cancelled'
         ]);
@@ -93,12 +94,13 @@ class BaseTableComponent extends TableComponent
     {
         $this->selectedModel = $this->model::find($id);
 
-        $this->confirm('Deactivate', [
+        $this->confirm(__('Deactivate'), [
             'toast' => false,
             'text' =>  __('Are you sure you want to deactivate the selected data?'),
             'position' => 'center',
             'showConfirmButton' => true,
             'cancelButtonText' => __("Cancel"),
+            'confirmButtonText' => __("Yes"),
             'onConfirmed' => 'deactivateModel',
             'onCancelled' => 'cancelled'
         ]);
@@ -108,12 +110,13 @@ class BaseTableComponent extends TableComponent
     {
         $this->selectedModel = $this->model::find($id);
 
-        $this->confirm('Delete', [
+        $this->confirm(__('Delete'), [
             'toast' => false,
             'text' =>  __('Are you sure you want to delete the selected data?'),
             'position' => 'center',
             'showConfirmButton' => true,
             'cancelButtonText' => __("Cancel"),
+            'confirmButtonText' => __("Yes"),
             'onConfirmed' => 'deleteModel',
             'onCancelled' => 'cancelled'
         ]);

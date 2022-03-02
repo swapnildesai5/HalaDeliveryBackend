@@ -1,7 +1,7 @@
 @section('title',  __('Menu') )
 <div>
 
-    <x-baseview title="{{ __('Menu') }}" :showNew="\Auth::user()->hasAnyRole('manager')">
+    <x-baseview title="{{ __('Menu') }}" :showNew="\Auth::user()->hasAnyRole('manager')" :newInfo="true">
         <livewire:tables.menu-table />
     </x-baseview>
 

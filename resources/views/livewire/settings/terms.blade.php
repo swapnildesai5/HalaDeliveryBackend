@@ -15,7 +15,7 @@
                     <p class="text-xs italic text-red-500">* Html code allowed</p>
                 </div>
                 <textarea id="terms" wire:model.defer="terms" class="w-full h-64 p-2 border border-black rounded-sm"></textarea>
-                <x-buttons.primary title="Save Changes" />
+                <x-buttons.primary title="{{ __('Save Changes') }}" />
 
             <div>
         </x-form>

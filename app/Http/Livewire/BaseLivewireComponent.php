@@ -82,6 +82,7 @@ class BaseLivewireComponent extends Component
             'text' => $message,
             'toast'  =>  false,
             "timer" => $time,
+            'cancelButtonText' => __('Cancel'),
         ]);
     }
 
@@ -92,6 +93,7 @@ class BaseLivewireComponent extends Component
             'text' => $message,
             'toast'  =>  false,
             "timer" => $time,
+            'cancelButtonText' => __('Cancel'),
         ]);
     }
 
@@ -102,6 +104,7 @@ class BaseLivewireComponent extends Component
             'text' => $message,
             'toast'  =>  false,
             "timer" => $time,
+            'cancelButtonText' => __('Cancel'),
         ]);
     }
 

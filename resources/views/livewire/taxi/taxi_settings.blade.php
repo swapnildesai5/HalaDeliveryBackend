@@ -9,8 +9,12 @@
             <div class="grid grid-cols-1 gap-5 md:grid-cols-2">
 
                 <x-input title="{{ __('Taxi Auto Cancel Time') }}({{ __('Mintues') }})" name="cancelPendingTaxiOrderTime" />
+                <x-input title="{{ __('Max order schedule days') }}" name="taxiMaxScheduleDays" />
                 <x-input title="{{ __('Average driving speed') }}(KM/H)" name="drivingSpeed" />
+            </div>
+            <div class="grid grid-cols-1 gap-5 md:grid-cols-2">
                 <x-checkbox title="{{ __('Multiple Currency') }}" name="multipleCurrency" :defer="false" /> 
+                <x-checkbox title="{{ __('Allow schedule taxi order') }}" name="canScheduleTaxiOrder" :defer="false" /> 
                 
             </div>
             {{-- custom message --}}

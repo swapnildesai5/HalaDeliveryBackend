@@ -206,6 +206,11 @@ class Order extends BaseModel
         return $this->getFirstMediaUrl('delivery_photo');
     }
 
+    public static function getPossibleStatues()
+    {
+        return ['pending', 'preparing', 'ready', 'enroute', 'delivered', 'failed', 'cancelled'];
+    }
+
     //updating wallet balance is order failed and was paid via wallet
     public function refundUser()
     {

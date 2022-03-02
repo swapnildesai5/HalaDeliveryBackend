@@ -7,7 +7,7 @@
 
                 <x-input title="{{ __('Driver Verification Document Instructions') }}" name="driverDocumentInstructions" />
                 <x-input title="{{ __('Vendor Verification Document Instructions') }}" name="vendorDocumentInstructions" />
-                <x-buttons.primary title="Save Changes" />
+                <x-buttons.primary title="{{ __('Save Changes') }}" />
 
             <div>
         </x-form>

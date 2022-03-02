@@ -432,6 +432,14 @@
         <x-menu-item title="{{ __('Coupon Report') }}" route="reports.coupons">
             <x-heroicon-o-chart-pie class="w-5 h-5" />
         </x-menu-item>
+        <x-menu-item title="{{ __('Referral Report') }}" route="reports.referral">
+            <x-heroicon-o-cursor-click class="w-5 h-5" />
+        </x-menu-item>
+        @endhasanyrole
+        @hasanyrole('admin')
+        <x-menu-item title="{{ __('Commission Report') }}" route="reports.commission">
+            <x-heroicon-o-cash class="w-5 h-5" />
+        </x-menu-item>
         @endhasanyrole
         {{-- products --}}
         @showProduct

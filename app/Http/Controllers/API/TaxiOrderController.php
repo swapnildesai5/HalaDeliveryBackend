@@ -158,7 +158,7 @@ class TaxiOrderController extends Controller
         //
         $authUser = User::find(\Auth::id());
         //
-        $taxiBookingOrder = Order::with('driver.vehicle')->otherCurrentStatus(['failed', 'cancelled', 'delivered'])
+        $taxiBookingOrder = Order::with('driver.vehicle')->otherCurrentStatus(['failed', 'cancelled', 'delivered','scheduled'])
             ->whereHas('taxi_order')
             ->when($authUser->hasRole("driver"), function ($q) {
                 return $q->where('driver_id', \Auth::id());

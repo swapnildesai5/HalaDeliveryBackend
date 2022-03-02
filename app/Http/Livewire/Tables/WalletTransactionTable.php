@@ -26,9 +26,9 @@ class WalletTransactionTable extends BaseDataTableComponent
             'status' => Filter::make(__("Payment Status"))
                 ->select([
                     '' => __('Any'),
-                    'pending' => 'Pending',
-                    'successful' => 'Successful',
-                    'failed' => 'Failed',
+                    'pending' => __('Pending'),
+                    'successful' => __('Successful'),
+                    'failed' => __('Failed'),
                 ]),
             'start_date' => Filter::make(__('Start Date'))
                 ->date([

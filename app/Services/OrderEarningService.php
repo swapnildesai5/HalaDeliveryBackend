@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use App\Models\Commission;
 use App\Models\Earned;
 use App\Models\Earning;
 use App\Models\Remittance;
@@ -63,6 +64,11 @@ class OrderEarningService
                         $earned = Earned::updateOrCreate(
                             ['order_id' => $order->id],
                             ['vendor_id' => $order->vendor_id]
+                        );
+                        //save admin commission data
+                        $commission = Commission::updateOrCreate(
+                            ['order_id' => $order->id],
+                            ['vendor_commission' => $systemCommission]
                         );
                     }
                 }
@@ -133,6 +139,13 @@ class OrderEarningService
                         $earned = Earned::updateOrCreate(
                             ['order_id' => $order->id],
                             ['driver_id' => $order->driver_id]
+                        );
+
+                        //save admin commission data
+                        $systemDriverCommission = $order->total - $earnedAmount;
+                        $commission = Commission::updateOrCreate(
+                            ['order_id' => $order->id],
+                            ['driver_commission' => $systemDriverCommission]
                         );
                     }
                 }

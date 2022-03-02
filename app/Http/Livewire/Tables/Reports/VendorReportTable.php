@@ -3,30 +3,16 @@
 namespace App\Http\Livewire\Tables\Reports;
 
 use App\Exports\VendorReportExport;
-use App\Http\Livewire\Tables\BaseDataTableComponent;
 use App\Models\Vendor;
 use Maatwebsite\Excel\Facades\Excel;
 
 use Rappasoft\LaravelLivewireTables\Views\Column;
 use Rappasoft\LaravelLivewireTables\Views\Filter;
 
-class VendorReportTable extends BaseDataTableComponent
+class VendorReportTable extends BaseReportTable
 {
 
     public $model = Vendor::class;
-    public array $bulkActions = [
-        'exportSelected' => 'Export',
-    ];
-
-    public array $filters = [];
-
-    public function mount()
-    {
-        $this->filters = [
-            'start_date' => now()->subDays(7)->format('Y-m-d'),
-            'end_date' => now()->format('Y-m-d'),
-        ];
-    }
 
     public function query()
     {

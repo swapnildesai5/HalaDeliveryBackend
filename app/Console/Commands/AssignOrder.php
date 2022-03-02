@@ -47,9 +47,9 @@ class AssignOrder extends Command
     public function handle()
     {
 
-
+        $autoAsignmentStatus = setting('autoassignment_status', "ready");
         //get orders in ready state
-        $orders = Order::currentStatus('ready')
+        $orders = Order::currentStatus($autoAsignmentStatus)
             ->whereHas('vendor', function ($query) {
                 return $query->where('auto_assignment', 1);
             })

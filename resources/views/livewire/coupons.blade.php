@@ -1,4 +1,4 @@
-@section('title',  __('Coupons') )
+@section('title', __('Coupons') )
 <div>
 
     <x-baseview title="{{ __('Coupons') }}" :showNew="true">
@@ -11,13 +11,24 @@
             <p class="text-xl font-semibold">{{ __('Create Coupon') }}</p>
 
             <x-input title="{{ __('Description') }}" name="description" />
-            
+
             <div class="grid gap-4 md:grid-cols-2">
                 <x-input title="{{ __('Code') }}" name="code" />
                 <x-input title="{{ __('Discount') }}" name="discount" />
+
+                <div>
+                    <x-input title="{{ __('Minimun Order Amount') }}" name="min_order_amount" />
+                    <p class="mt-1 text-xs font-light text-gray-400">{{ __("Empty for unlimited times") }}</p>
+                </div>
+                <div>
+                    <x-input title="{{ __('Maximum coupon amount') }}" name="max_coupon_amount" />
+                    <p class="mt-1 text-xs font-light text-gray-400">{{ __("Empty for unlimited times") }}</p>
+                </div>
+
+
                 <div>
                     <x-input title="{{ __('Times Per Customer') }}" name="times" type="number" />
-                    <p class="mt-1 text-sm font-light text-gray-400">{{ __("Empty for unlimited times") }}</p>
+                    <p class="mt-1 text-xs font-light text-gray-400">{{ __("Empty for unlimited times") }}</p>
                 </div>
                 <x-input title="{{ __('Expires On') }}" name="expires_on" type="date" />
 
@@ -28,19 +39,13 @@
             </div>
 
             {{-- products --}}
-            <livewire:component.autocomplete-input title="{{ __('Products') }}" column="name"
-                model="Product" emitFunction="autocompleteProductSelected" :customQuery="$customQuery"
-                 :clear="true" :queryClause="$productSearchClause"
-                onclearCalled="clearAutocompleteFieldsEvent" />
+            <livewire:component.autocomplete-input title="{{ __('Products') }}" column="name" model="Product" emitFunction="autocompleteProductSelected" :customQuery="$customQuery" :clear="true" :queryClause="$productSearchClause" onclearCalled="clearAutocompleteFieldsEvent" />
 
             {{-- selected products --}}
             <x-item-chips :items="$selectedProducts ?? []" onRemove="removeSelectedProduct" />
 
             {{-- vendors --}}
-            <livewire:component.autocomplete-input title="{{ __('Vendors') }}" column="name"
-                model="Vendor" emitFunction="autocompleteVendorSelected" 
-                :clear="true" :queryClause="$vendorSearchClause"
-                onclearCalled="clearAutocompleteFieldsEvent" />
+            <livewire:component.autocomplete-input title="{{ __('Vendors') }}" column="name" model="Vendor" emitFunction="autocompleteVendorSelected" :clear="true" :queryClause="$vendorSearchClause" onclearCalled="clearAutocompleteFieldsEvent" />
 
             {{-- selected vendor --}}
             <x-item-chips :items="$selectedVendors ?? []" onRemove="removeSelectedVendor" />
@@ -54,13 +59,21 @@
         <x-modal confirmText="{{ __('Update') }}" action="update" :clickAway="false">
             <p class="text-xl font-semibold">{{ __('Update Option') }}</p>
             <x-input title="{{ __('Description') }}" name="description" />
-            
+
             <div class="grid gap-4 md:grid-cols-2">
                 <x-input title="{{ __('Code') }}" name="code" />
                 <x-input title="{{ __('Discount') }}" name="discount" />
                 <div>
+                    <x-input title="{{ __('Minimun Order Amount') }}" name="min_order_amount" />
+                    <p class="mt-1 text-xs font-light text-gray-400">{{ __("Empty for unlimited times") }}</p>
+                </div>
+                <div>
+                    <x-input title="{{ __('Maximum coupon amount') }}" name="max_coupon_amount" />
+                    <p class="mt-1 text-xs font-light text-gray-400">{{ __("Empty for unlimited times") }}</p>
+                </div>
+                <div>
                     <x-input title="{{ __('Times Per Customer') }}" name="times" type="number" />
-                    <p class="mt-1 text-sm font-light text-gray-400">{{ __("Empty for unlimited times") }}</p>
+                    <p class="mt-1 text-xs font-light text-gray-400">{{ __("Empty for unlimited times") }}</p>
                 </div>
                 <x-input title="{{ __('Expires On') }}" name="expires_on" type="date" />
 
@@ -70,23 +83,17 @@
 
             </div>
 
-             {{-- products --}}
-             <livewire:component.autocomplete-input title="{{ __('Products') }}" column="name"
-             model="Product" emitFunction="autocompleteProductSelected" :customQuery="$customQuery"
-              :clear="true" :queryClause="$productSearchClause"
-             onclearCalled="clearAutocompleteFieldsEvent" />
+            {{-- products --}}
+            <livewire:component.autocomplete-input title="{{ __('Products') }}" column="name" model="Product" emitFunction="autocompleteProductSelected" :customQuery="$customQuery" :clear="true" :queryClause="$productSearchClause" onclearCalled="clearAutocompleteFieldsEvent" />
 
-         {{-- selected products --}}
-         <x-item-chips :items="$selectedProducts ?? []" onRemove="removeSelectedProduct" />
+            {{-- selected products --}}
+            <x-item-chips :items="$selectedProducts ?? []" onRemove="removeSelectedProduct" />
 
-         {{-- vendors --}}
-         <livewire:component.autocomplete-input title="{{ __('Vendors') }}" column="name"
-             model="Vendor" emitFunction="autocompleteVendorSelected" 
-             :clear="true" :queryClause="$vendorSearchClause"
-             onclearCalled="clearAutocompleteFieldsEvent" />
+            {{-- vendors --}}
+            <livewire:component.autocomplete-input title="{{ __('Vendors') }}" column="name" model="Vendor" emitFunction="autocompleteVendorSelected" :clear="true" :queryClause="$vendorSearchClause" onclearCalled="clearAutocompleteFieldsEvent" />
 
-         {{-- selected vendor --}}
-         <x-item-chips :items="$selectedVendors ?? []" onRemove="removeSelectedVendor" />
+            {{-- selected vendor --}}
+            <x-item-chips :items="$selectedVendors ?? []" onRemove="removeSelectedVendor" />
 
 
         </x-modal>
@@ -98,22 +105,21 @@
 
             <p class="text-xl font-semibold">{{ __('Coupon Details') }}</p>
             <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
-                <x-details.item title="{{ __('Code') }}"
-                    text="{{ $selectedModel->code ?? '' }}" />
-                <x-details.item title="{{ __('Description') }}"
-                    text="{{ $selectedModel->description ?? '' }}" />
+                <x-details.item title="{{ __('Code') }}" text="{{ $selectedModel->code ?? '' }}" />
+                <x-details.item title="{{ __('Description') }}" text="{{ $selectedModel->description ?? '' }}" />
+                    {{--    --}}
+                <x-details.item title="{{ __('Minimun Order Amount') }}" text="{{ empty($selectedModel->min_order_amount ?? '') ? '' : currencyFormat($selectedModel->min_order_amount ?? '') }}" />
+                <x-details.item title="{{ __('Maximum coupon amount') }}" text="{{ empty($selectedModel->max_coupon_amount ?? '') ? '' : currencyFormat($selectedModel->max_coupon_amount ?? '') }}" />
 
                 {{-- discount --}}
                 <div>
                     <x-label title="{{ __('Discount') }}" />
                     @if( $selectedModel )
-                        @include('components.table.coupon_discount_price', [ "model" => $selectedModel ] )
+                    @include('components.table.coupon_discount_price', [ "model" => $selectedModel ] )
                     @endif
                 </div>
-                <x-details.item title="{{ __('Expires On') }}"
-                    text="{{ $selectedModel->formatted_expires_on ?? '' }}" />
-                <x-details.item title="{{ __('Useable Times') }}"
-                    text="{{ $selectedModel->times ?? 'Unlimited' }}" />
+                <x-details.item title="{{ __('Expires On') }}" text="{{ $selectedModel->formatted_expires_on ?? '' }}" />
+                <x-details.item title="{{ __('Useable Times') }}" text="{{ $selectedModel->times ?? 'Unlimited' }}" />
                 <div>
                     <x-label title="{{ __('Status') }}" />
                     <x-table.active :model="$selectedModel" />
@@ -129,9 +135,9 @@
                     {{-- chips --}}
                     <div class="flex flex-wrap justify-start">
                         @if( $selectedModel )
-                            @foreach($selectedModel->products as $product)
-                                <x-table.chip text="{{ $product->name }}" />
-                            @endforeach
+                        @foreach($selectedModel->products as $product)
+                        <x-table.chip text="{{ $product->name }}" />
+                        @endforeach
                         @endif
                     </div>
                 </div>
@@ -140,9 +146,9 @@
                     <x-label title="{{ __('Vendors') }}" />
                     <div class="flex flex-wrap justify-start">
                         @if( $selectedModel )
-                            @foreach($selectedModel->vendors as $vendor)
-                                <x-table.chip text="{{ $vendor->name }}" />
-                            @endforeach
+                        @foreach($selectedModel->vendors as $vendor)
+                        <x-table.chip text="{{ $vendor->name }}" />
+                        @endforeach
                         @endif
                     </div>
                 </div>

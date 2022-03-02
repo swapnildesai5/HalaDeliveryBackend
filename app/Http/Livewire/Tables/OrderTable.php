@@ -19,44 +19,37 @@ class OrderTable extends BaseDataTableComponent
     public $per_page = 10;
 
     public $dataListQuery;
-    public array $bulkActions = [
-        'exportSelected' => 'Export',
-    ];
+    public array $bulkActions = [];
+
+    public function mount(){
+        $this->bulkActions = [
+            'exportSelected' => __('Export'),
+        ];
+    }
 
 
     public function filters(): array
     {
         return [
-            // 'type' => Filter::make(__("Vendor Type"))
-            //     ->select([
-            //         '' => __('Any'),
-            //         'pending' => 'Pending',
-            //         'preparing' => 'Preparing',
-            //         'ready' => 'Ready',
-            //         'enroute' => 'Enroute',
-            //         'delivered' => 'Delivered',
-            //         'cancelled' => 'Cancelled',
-            //         'failed' => 'Failed',
-            //     ]),
             'status' => Filter::make(__("Status"))
                 ->select([
                     '' => __('Any'),
-                    'scheduled' => 'Scheduled',
-                    'pending' => 'Pending',
-                    'preparing' => 'Preparing',
-                    'ready' => 'Ready',
-                    'enroute' => 'Enroute',
-                    'delivered' => 'Delivered',
-                    'cancelled' => 'Cancelled',
-                    'failed' => 'Failed',
+                    'scheduled' => __('Scheduled'),
+                    'pending' => __('Pending'),
+                    'preparing' => __('Preparing'),
+                    'ready' => __('Ready'),
+                    'enroute' => __('Enroute'),
+                    'delivered' => __('Delivered'),
+                    'cancelled' => __('Cancelled'),
+                    'failed' => __('Failed'),
                 ]),
             'payment_status' => Filter::make(__("Payment Status"))
                 ->select([
                     '' => __('Any'),
-                    'pending' => 'Pending',
-                    'review' => 'Review',
-                    'successful' => 'Successful',
-                    'failed' => 'Failed',
+                    'pending' => __('Pending'),
+                    'review' => __('Review'),
+                    'successful' => __('Successful'),
+                    'failed' => __('Failed'),
                 ]),
             'start_date' => Filter::make(__('Start Date'))
                 ->date([
