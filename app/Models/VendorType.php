@@ -7,7 +7,7 @@ class VendorType extends BaseModel
 
 
     protected $fillable = ['name', 'description', 'slug', 'is_active', 'color'];
-    protected $appends = ['formatted_date', 'logo'];
+    protected $appends = ['formatted_date', 'logo', 'website_header'];
     protected $casts = [
         'id' => 'int',
         'is_active' => 'int',
@@ -30,6 +30,12 @@ class VendorType extends BaseModel
     {
         return $this->getFirstMediaUrl('logo');
     }
+
+    public function getWebsiteHeaderAttribute()
+    {
+        return $this->getFirstMediaUrl('website_header');
+    }
+
 
     public function getIsParcelAttribute()
     {

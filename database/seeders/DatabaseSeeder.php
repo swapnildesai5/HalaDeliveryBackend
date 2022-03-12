@@ -20,7 +20,7 @@ class DatabaseSeeder extends Seeder
         $this->call(VendorTypesTableSeeder::class);
         $this->call(CategoriesTableSeeder::class);
         
-        $this->call(VendorsTableSeeder::class);
+        // $this->call(VendorsTableSeeder::class);
 
         $this->call(UsersTableSeeder::class);
         $this->call(RolesTableSeeder::class);
@@ -46,5 +46,6 @@ class DatabaseSeeder extends Seeder
         $this->call(SmsGatewaysTableSeeder::class);
         $this->call(CarMakesTableSeeder::class);
         $this->call(CarModelsTableSeeder::class);
+        $this->call(PermissionsTableSeeder::class);
     }
 }

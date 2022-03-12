@@ -20,6 +20,7 @@ class CreateBannersTable extends Migration
             $table->foreignId('category_id')->nullable()->constrained();
             $table->foreignId('vendor_id')->nullable()->constrained();
             $table->integer('in_order')->default(1);
+            $table->integer('featured')->default(1);
             $table->timestamps();
             $table->softDeletes();
         });

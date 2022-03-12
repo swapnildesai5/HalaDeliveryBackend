@@ -73,6 +73,15 @@ class AutocompleteInput extends Component
                         return $query->where('name', "driver");
                     })->where("name", "like", "%" . $value . "%")->limit(10)->get()->toArray();
                     break;
+                case 'fleet-driver':
+                    $this->dataList = User::whereHas('roles', function ($query) {
+                        return $query->where('name', "driver");
+                    })
+                        ->where("name", "like", "%" . $value . "%")
+                        ->whereHas('fleets', function ($query) {
+                            return $query->where('id', \Auth::user()->fleet()->id ?? null);
+                        })->limit(10)->get()->toArray();
+                    break;
                 case 'city-admin-products':
                     $this->dataList = Product::with('vendor')->whereHas("vendor", function ($query) {
                         return $query->where('creator_id', \Auth::id());

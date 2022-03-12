@@ -50,4 +50,12 @@ trait EloquentRelationshipTrait
 
         return $relations;
     }
+
+    public function fleets(){
+        return $this->belongsToMany('App\Models\Fleet');
+    }
+
+    public function fleet(){
+        return $this->fleets()->first() ?? null;
+    }
 }

@@ -15,6 +15,7 @@ class PackageTypeLivewire extends BaseLivewireComponent
     //
     public $name;
     public $description;
+    public $driver_verify_stops;
     public $is_active;
 
     protected $rules = [
@@ -32,11 +33,12 @@ class PackageTypeLivewire extends BaseLivewireComponent
         $this->validate();
 
         try{
-
+            $this->isDemo();
             DB::beginTransaction();
             $model = new PackageType();
             $model->name = $this->name;
             $model->description = $this->description;
+            $model->driver_verify_stops = $this->driver_verify_stops;
             $model->is_active = $this->is_active ?? 0;
             $model->save();
 
@@ -67,6 +69,7 @@ class PackageTypeLivewire extends BaseLivewireComponent
         $this->selectedModel = $this->model::find($id);
         $this->name = $this->selectedModel->name;
         $this->description = $this->selectedModel->description;
+        $this->driver_verify_stops = $this->selectedModel->driver_verify_stops;
         $this->is_active = $this->selectedModel->is_active;
         $this->emit('showEditModal');
     }
@@ -76,11 +79,12 @@ class PackageTypeLivewire extends BaseLivewireComponent
         $this->validate();
 
         try{
-
+            $this->isDemo();
             DB::beginTransaction();
             $model = $this->selectedModel;
             $model->name = $this->name;
             $model->description = $this->description;
+            $model->driver_verify_stops = $this->driver_verify_stops;
             $model->is_active = $this->is_active ?? 0;
             $model->save();
 

@@ -21,9 +21,9 @@
             </x-settings-item>
 
             {{-- update --}}
-            <x-settings-item title="{{ __('Update Remotely') }}" wireClick="getRemoteVersions">
+            {{--  <x-settings-item title="{{ __('Update Remotely') }}" wireClick="getRemoteVersions">
                 <x-heroicon-o-cloud-download class="w-5 h-5 mr-4" />
-            </x-settings-item>
+            </x-settings-item>  --}}
 
         </div>
 

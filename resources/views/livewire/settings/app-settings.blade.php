@@ -69,6 +69,10 @@
                         <p>{{ __("Facebook Login") }}</p>
                         <x-checkbox title="{{ __('Enable') }}" name="facebbokLogin" :defer="true" />
                     </div>
+                    <div class="block mt-4 text-sm">
+                        <p>{{ __("QR Code Login") }}</p>
+                        <x-checkbox title="{{ __('Enable') }}" name="qrcodeLogin" :defer="true" />
+                    </div>
                 </div>
 
 

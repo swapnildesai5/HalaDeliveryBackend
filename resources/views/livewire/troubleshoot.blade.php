@@ -23,6 +23,16 @@
                 <x-heroicon-o-bell class="w-5 h-5 rtl:ml-4 ltr:mr-4" />
             </x-settings-item>
 
+            {{-- referal code --}}
+            <x-settings-item title="{{__('User referral code')}}" wireClick="fixReferralCodes">
+                <x-heroicon-o-cursor-click class="w-5 h-5 rtl:ml-4 ltr:mr-4" />
+            </x-settings-item>
+
+            {{-- role/permssions --}}
+            <x-settings-item title="{{__('User roles/permissions')}}" wireClick="fixUserPermission">
+                <x-heroicon-o-identification class="w-5 h-5 rtl:ml-4 ltr:mr-4" />
+            </x-settings-item>
+
 
 
         </div>

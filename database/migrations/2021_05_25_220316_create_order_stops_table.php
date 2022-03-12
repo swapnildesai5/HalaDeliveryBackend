@@ -22,6 +22,7 @@ class CreateOrderStopsTable extends Migration
             $table->string('name')->nullable();
             $table->string('phone')->nullable();
             $table->string('note')->nullable();
+            $table->boolean('verified')->default(false);
             //indicate if the order is for package delivery or regular delivery
             // $table->enum('type', ['regular', 'package'])->default('regular');
             // $table->string('recipient_name')->nullable();

@@ -55,7 +55,19 @@ class ResetDBState extends Command
         \DB::table('settings')
             ->where('key', "appVerison")
             ->update(['value' => $appVerison]);
-            $this->info('Done setting app version');
+
+        \DB::table('settings')
+            ->where('key', "googleMapKey")
+            ->delete();
+
+        //
+        $keysToDelete = ["googleMapKey", "apiKey", "projectId", "messagingSenderId", "appId", "vapidKey", "billzCollectionId","serverFBAuthToken"];
+        $this->withProgressBar($keysToDelete, function ($key) {
+            \DB::table('settings')
+                ->where('key', $key)
+                ->delete();
+        });
+        $this->info('Done setting app version');
         return 0;
     }
 }

@@ -13,6 +13,7 @@
     @endrole
 
     {{-- Vendors --}}
+    @hasanyrole('admin|manager')
     <x-group-menu-item routePath="vendors*" title="{{ __('Vendor Mangt.') }}" icon="heroicon-o-cube">
 
         @role('admin')
@@ -32,6 +33,7 @@
         </x-menu-item>
 
     </x-group-menu-item>
+    @endhasanyrole
 
 
     @hasanyrole('manager')
@@ -107,7 +109,7 @@
         @endhasanyrole
 
         {{-- manager package delivery options --}}
-        @role('manager')
+        @hasanyrole('manager')
         <x-menu-item title="{{ __('Pricing') }}" route="package.pricing">
             <x-heroicon-o-currency-dollar class="w-5 h-5" />
         </x-menu-item>
@@ -174,8 +176,33 @@
 
     </x-group-menu-item>
     @endhasanyrole
+    @hasanyrole('admin|fleet-manager')
+    <x-group-menu-item routePath="fleet/*" title="{{ __('Fleet Managment') }}" icon="heroicon-o-briefcase">
+        @can('manager-fleets')
+        <x-menu-item title="{{ __('Fleets') }}" route="fleets">
+            <x-heroicon-o-briefcase class="w-5 h-5" />
+        </x-menu-item>
+        @endcan
+
+        @hasanyrole('fleet-manager')
+        <x-menu-item title="{{ __('Users') }}" route="fleet.users">
+            <x-heroicon-o-users class="w-5 h-5" />
+        </x-menu-item>
+
+        <x-menu-item title="{{ __('Vehicles') }}" route="fleet.vehicles">
+            <x-heroicon-o-truck class="w-5 h-5" />
+        </x-menu-item>
+
+        <x-menu-item title="{{ __('Fleet report') }}" route="fleet.report">
+            <x-heroicon-o-chart-pie class="w-5 h-5" />
+        </x-menu-item>
+        @endhasanyrole
+
+    </x-group-menu-item>
+    @endhasanyrole
     <x-hr />
     {{-- orders --}}
+    @hasanyrole('city-admin|admin|manager')
     <x-group-menu-item routePath="order/*" title="{{ __('Orders') }}" icon="heroicon-o-shopping-bag">
 
         <x-menu-item title="{{ __('Orders') }}" route="orders">
@@ -190,15 +217,14 @@
         <x-menu-item title="{{ __('Delivery Address') }}" route="delivery.addresses">
             <x-heroicon-o-location-marker class="w-5 h-5" />
         </x-menu-item>
-        @endhasanyrole
 
         <x-menu-item title="{{ __('Coupons') }}" route="coupons">
             <x-heroicon-o-receipt-tax class="w-5 h-5" />
         </x-menu-item>
+        @endhasanyrole
 
     </x-group-menu-item>
 
-    @hasanyrole('city-admin|admin')
 
     @endhasanyrole
     {{-- Users --}}
@@ -236,6 +262,7 @@
     @endhasanyrole
 
     {{-- Earings --}}
+    @can('view-earning')
     <x-group-menu-item routePath="earnings/*" title="{{ __('Earnings') }}" icon="heroicon-o-cash">
         @hasanyrole('city-admin|admin')
         <x-menu-item title="{{ __('Vendor Earnings') }}" route="earnings.vendors">
@@ -255,8 +282,10 @@
         @endhandleDeliveryBoys
 
     </x-group-menu-item>
+    @endcan
 
     {{-- Payouts --}}
+    @can('view-payout')
     <x-group-menu-item routePath="payouts*" title="{{ __('Payouts') }}" icon="heroicon-o-clipboard-check">
         @hasanyrole('city-admin|admin')
         <x-menu-item title="{{ __('Vendor Payouts') }}" route="payouts" rawRoute="{{ route('payouts', ['type' => 'vendors']) }}">
@@ -268,8 +297,9 @@
         </x-menu-item>
 
     </x-group-menu-item>
+    @endcan
 
-
+    @can("view-subscription")
     <x-group-menu-item routePath="subscription*" title="{{ __('Subscription') }}" icon="heroicon-o-shield-check">
         {{-- subscription list --}}
         @hasanyrole('admin')
@@ -291,6 +321,7 @@
         @endhasanyrole
 
     </x-group-menu-item>
+    @endcan
 
     {{-- Payment methods --}}
     @hasanyrole('manager')
@@ -426,6 +457,7 @@
 
     <x-hr />
     {{-- reports --}}
+    @can('view-report')
     <x-group-menu-item routePath="reports/*" title="{{ __('Reports') }}" icon="heroicon-o-chart-square-bar">
 
         @hasanyrole('admin|city-admin')
@@ -467,6 +499,7 @@
         </x-menu-item>
         @endhasanyrole
     </x-group-menu-item>
+    @endcan
 
 
     <livewire:component.dynamic-nav-menu />

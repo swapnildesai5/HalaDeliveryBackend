@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Traits\EloquentRelationshipTrait;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\MediaLibrary\HasMedia;
@@ -13,6 +14,7 @@ class NoDeleteBaseModel extends Model implements HasMedia
 {
 
     use HasFactory, InteractsWithMedia;
+    use EloquentRelationshipTrait;
 
     protected $appends = ['formatted_date', 'formatted_updated_date', 'photo'];
     protected $casts = [ 'id' => 'integer' ];

@@ -8,8 +8,10 @@
             <div class="">
                 <x-details.item title="{{ __('Home Screen') }}">
                     <div class='grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-4'>
-
-                        <x-checkbox title="{{ __('Show Banner On Home Screen') }}" name="showBannerOnHomeScreen"  />
+                        <x-checkbox title="{{ __('Banner') }}" description="{{ __('Show Banner On Home Screen') }}" name="showBannerOnHomeScreen" />
+                        <x-select title="{{ __('Banner Position') }}" :options="['Top','Bottom']" name="bannerPosition" />
+                        <x-select title="{{ __('Vendor Type Listing Style') }}" :options="['Both','GridView','ListView']" name="vendortypeListStyle" />
+                        <x-input title="{{ __('Vendor Type Per Row') }}" name="vendortypePerRow" type="number" />
                     </div>
                 </x-details.item>
                 <hr class="my-4" />
@@ -34,7 +36,7 @@
                     </div>
                 </x-details.item>
                 <hr class="my-4" />
-               
+
                 <div class='grid grid-cols-1 gap-4 md:grid-cols-2 '>
                     <x-buttons.primary title="{{ __('Save Changes') }}" />
                 </div>

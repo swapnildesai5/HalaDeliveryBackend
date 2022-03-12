@@ -33,7 +33,7 @@ class CustomerReportLivewire extends BaseLivewireComponent
         $dataSet = Order::currentStatus('delivered')->groupBy('user_id')->selectRaw('count(*) as total, user_id')->with('user')->limit(10)->get();
         $chart = $dataSet->reduce(
             function ($pieChartModel, $data) {
-                return $pieChartModel->addSlice($data["user"]["name"], $data["total"], $this->genColor());
+                return $pieChartModel->addSlice($data["user"]["name"], ($data["total"] ?? 0), $this->genColor());
             },
             LivewireCharts::pieChartModel()
                 ->setTitle(__("Top Buyers"))
@@ -52,7 +52,7 @@ class CustomerReportLivewire extends BaseLivewireComponent
         $dataSet = Order::currentStatus('cancelled')->groupBy('user_id')->selectRaw('count(*) as total, user_id')->with('user')->limit(10)->get();
         $chart = $dataSet->reduce(
             function ($pieChartModel, $data) {
-                return $pieChartModel->addSlice($data["user"]["name"], $data["total"], $this->genColor());
+                return $pieChartModel->addSlice($data["user"]["name"], ($data["total"] ?? 0), $this->genColor());
             },
             LivewireCharts::pieChartModel()
                 ->setTitle(__("Most Order Cancellation"))
@@ -71,7 +71,7 @@ class CustomerReportLivewire extends BaseLivewireComponent
         $dataSet = Order::groupBy('user_id')->selectRaw('count(*) as total, user_id')->with('user')->limit(10)->get();
         $chart = $dataSet->reduce(
             function ($pieChartModel, $data) {
-                return $pieChartModel->addSlice($data["user"]["name"], $data["total"], $this->genColor());
+                return $pieChartModel->addSlice($data["user"]["name"], ($data["total"] ?? 0), $this->genColor());
             },
             LivewireCharts::pieChartModel()
                 ->setTitle(__("Most Orders"))
@@ -90,7 +90,7 @@ class CustomerReportLivewire extends BaseLivewireComponent
         $dataSet = Order::groupBy('user_id')->selectRaw('count(*) as total, user_id')->with('user')->orderBy('user_id','desc')->limit(10)->get();
         $chart = $dataSet->reduce(
             function ($pieChartModel, $data) {
-                return $pieChartModel->addSlice($data["user"]["name"], $data["total"], $this->genColor());
+                return $pieChartModel->addSlice($data["user"]["name"], ($data["total"] ?? 0), $this->genColor());
             },
             LivewireCharts::pieChartModel()
                 ->setTitle(__("Least Buyers"))

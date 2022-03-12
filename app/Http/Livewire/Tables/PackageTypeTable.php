@@ -21,8 +21,9 @@ class PackageTypeTable extends OrderingBaseDataTableComponent
         return [
             Column::make(__('ID'),"id")->searchable()->sortable(),
             Column::make(__('Name'),'name')->searchable(),
+            Column::make(__('Stops verification'),'driver_verify_stops'),
             Column::make(__('Description')),
-            $this->imageColumn(),
+            $this->smImageColumn(),
             $this->activeColumn(),
             Column::make(__('Created At'), 'formatted_date'),
             $this->actionsColumn(),

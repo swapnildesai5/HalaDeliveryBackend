@@ -62,6 +62,7 @@ class BaseLivewireComponent extends Component
         'autocompleteCategorySelected' => 'autocompleteCategorySelected',
         'photoSelected' => 'photoSelected',
         'refreshDataTable' => 'refreshDataTable',
+        'initiateLoginAs' => 'initiateLoginAs',
     ];
 
     public function togglePassword()
@@ -161,7 +162,7 @@ class BaseLivewireComponent extends Component
         $this->stopRefresh = false;
         $this->reset();
     }
-    
+
     public function closeModal()
     {
         $this->showCreate = false;
@@ -217,7 +218,7 @@ class BaseLivewireComponent extends Component
 
     public function orderPaymentStatus()
     {
-        return ['pending','request', 'review', 'failed', 'cancelled', 'successful'];
+        return ['pending', 'request', 'review', 'failed', 'cancelled', 'successful'];
     }
 
 
@@ -255,10 +256,24 @@ class BaseLivewireComponent extends Component
         return redirect()->route('logout');
     }
 
+    public function initiateLoginAs($vendorId)
+    {
+        $manager = Vendor::find($vendorId)->managers->first() ?? null;
+        if (empty($manager)) {
+            $this->showWarningAlert(
+                __("No manager is assigned to vendor, so you can login into the vendor. Please create and assign at least one manager to the vendor")
+            );
+        } else {
+            //logout and login as the manager
+            Auth::logout(); // for end current session
+            Auth::loginUsingId($manager->id);
+            return redirect()->to('');
+        }
+    }
+
 
     public function genColor()
     {
         return '#' . substr(str_shuffle('ABCDEF0123456789'), 0, 6);
     }
-
 }

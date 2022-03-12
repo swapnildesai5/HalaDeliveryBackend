@@ -3,6 +3,7 @@
 
     @hasanyrole('admin|city-admin')
         <x-buttons.assign :model="$model" />
+        <x-buttons.loginas :model="$model" />
     @endhasanyrole
     <x-buttons.time :model="$model" />
     <x-buttons.show :model="$model" />
@@ -23,6 +24,7 @@
             <x-buttons.deactivate :model="$model" />
         @endif
     @endrole
+
 
 
 

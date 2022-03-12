@@ -10,6 +10,8 @@ use App\Models\CityVendor;
 use App\Models\StateVendor;
 use App\Models\CountryVendor;
 use App\Models\DeliveryAddress;
+use App\Models\Order;
+use App\Models\OrderStop;
 use App\Models\PackageTypePricing;
 use App\Models\Vendor;
 use App\Traits\GoogleMapApiTrait;
@@ -188,6 +190,41 @@ class PackageOrderController extends Controller
         ]);
     }
 
+
+    public function verifyOrderStop(Request $request, $id)
+    {
+        $orderStop = OrderStop::find($id);
+        if (empty($orderStop)) {
+            return response()->json([
+                "message" => __("Invalid order stop"),
+            ], 400);
+        }
+
+        //
+        try {
+
+            \DB::beginTransaction();
+            $orderStop->verified = true;
+            $orderStop->save();
+            //for signature
+            if ($request->hasFile("signature")) {
+                $orderStop->addMedia($request->signature->getRealPath())->toMediaCollection("proof");
+            }
+
+            \DB::commit();
+
+            return response()->json([
+                "message" => __("Order stop verified"),
+                "order" => Order::fullData()->where('id', $orderStop->order_id)->first(),
+            ], 200);
+        } catch (\Exception $ex) {
+            \DB::rollback();
+            logger("Order stop verification error",[$ex]);
+            return response()->json([
+                "message" => __("Error verifying order stop"),
+            ], 400);
+        }
+    }
 
 
     //

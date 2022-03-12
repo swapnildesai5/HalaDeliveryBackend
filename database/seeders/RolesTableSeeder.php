@@ -59,6 +59,14 @@ class RolesTableSeeder extends Seeder
                 'created_at' => '2020-12-28 11:57:58',
                 'updated_at' => '2020-12-28 11:57:58',
             ),
+            5 => 
+            array (
+                'id' => 6,
+                'name' => 'fleet-manager',
+                'guard_name' => 'web',
+                'created_at' => '2020-12-28 11:57:58',
+                'updated_at' => '2020-12-28 11:57:58',
+            ),
         ));
         
         

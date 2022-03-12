@@ -38,6 +38,7 @@ class AppSettingsLivewire extends BaseLivewireComponent
     public $googleLogin;
     public $appleLogin;
     public $facebbokLogin;
+    public $qrcodeLogin;
 
     //
     public $what3wordsApiKey;
@@ -124,6 +125,7 @@ class AppSettingsLivewire extends BaseLivewireComponent
         $this->googleLogin = (bool) setting('googleLogin');
         $this->appleLogin = (bool) setting('appleLogin');
         $this->facebbokLogin = (bool) setting('facebbokLogin');
+        $this->qrcodeLogin = (bool) setting('qrcodeLogin');
         
 
         $this->alertDuration = (int) setting('alertDuration', 15);
@@ -224,6 +226,7 @@ class AppSettingsLivewire extends BaseLivewireComponent
                 'googleLogin' =>  $this->googleLogin,
                 'appleLogin' =>  $this->appleLogin,
                 'facebbokLogin' =>  $this->facebbokLogin,
+                'qrcodeLogin' =>  $this->qrcodeLogin,
 
 
                 'clearFirestore' =>  $this->clearFirestore,

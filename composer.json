@@ -43,6 +43,7 @@
         "asantibanez/livewire-charts": "^2.2",
         "asantibanez/livewire-select": "^2.0",
         "blade-ui-kit/blade-heroicons": "^1.2",
+        "chillerlan/php-qrcode": "^4.3",
         "craftsys/msg91-php": "^0.15.2",
         "doctrine/dbal": "^3.1",
         "fideloper/proxy": "^4.4",

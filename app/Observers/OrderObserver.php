@@ -29,6 +29,10 @@ class OrderObserver
         if (empty($model->user_id)) {
             $model->user_id = Auth::id();
         }
+
+        if (empty($model->payer)) {
+            $model->payer = true;
+        }
     }
 
     public function created(Order $model)

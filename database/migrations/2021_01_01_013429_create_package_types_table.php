@@ -19,6 +19,7 @@ class CreatePackageTypesTable extends Migration
             $table->text('description')->nullable();
             $table->boolean('is_active')->default(true);
             $table->integer('in_order')->default(1);
+            $table->boolean('driver_verify_stops')->default(false);
             $table->timestamps();
             $table->softDeletes();
         });

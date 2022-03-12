@@ -10,9 +10,9 @@
                     {{ currencyFormat($subscription->amount) }}
                 </p>
                 <p class="px-2 mt-4 mb-1 text-xl">{{ $subscription->name }}</p>
-                <p class="px-2 mb-4 text-2xl font-medium">{{ $subscription->days }} <span class="text-xl font-medium">{{ _('Days') }}</span></p>
+                <p class="px-2 mb-4 text-2xl font-medium">{{ $subscription->days }} <span class="text-xl font-medium">{{ __('Days') }}</span></p>
                 @if (!empty($subscription->qty) )
-                <p class="px-2 text-2xl font-medium">{{ $subscription->qty }} <span class="text-xl font-medium">{{ _('Qty') }}</span></p>
+                <p class="px-2 text-2xl font-medium">{{ $subscription->qty }} <span class="text-xl font-medium">{{ __('Qty') }}</span></p>
                 <p class="mx-4 mb-4 text-xs text-gray-400">{{ __("Note: Number of products/services/package types allowed per vendor") }}</p>
                 @endif
             </div>

@@ -75,6 +75,7 @@ Route::post('otp/send', [OTPController::class, 'sendOTP']);
 Route::post('otp/verify', [OTPController::class, 'verifyOTP']);
 Route::post('otp/firebase/verify', [OTPController::class, 'verifyFirebaseToken']);
 Route::post('login', [AuthController::class, 'login']);
+Route::post('login/qrcode', [AuthController::class, 'qrlogin']);
 Route::post('social/login', [SocialLoginController::class, 'login']);
 Route::post('register', [AuthController::class, 'register']);
 Route::get('logout', [AuthController::class, 'logout']);
@@ -115,6 +116,7 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     //package delivery
     Route::get('package/order/summary', [PackageOrderController::class, 'summary']);
     Route::get('general/order/summary', [RegularOrderController::class, 'summary']);
+    Route::post('package/order/stop/verify/{id}', [PackageOrderController::class, 'verifyOrderStop']);
     //
     Route::post('chat/notification', [ChatNotificationController::class, 'send']);
 

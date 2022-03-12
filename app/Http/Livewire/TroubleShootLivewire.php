@@ -70,6 +70,7 @@ class TroubleShootLivewire extends BaseLivewireComponent
         }
     }
 
+
     public function fixNotification()
     {
         try {
@@ -141,6 +142,37 @@ class TroubleShootLivewire extends BaseLivewireComponent
             logger("drivers error", [$error->getMessage() ?? '']);
         }
     }
+
+
+    public function fixReferralCodes()
+    {
+
+        try {
+            $users = User::whereNull('code')->get();
+            foreach ($users as $user) {
+                $user->code = \Str::random(3) . "" . $user->id . "" . \Str::random(2);
+                $user->save();
+            }
+            $this->showSuccessAlert(__("Referral code fixed") . " " . __("Successfully"));
+        } catch (\Exception $ex) {
+            $this->showErrorAlert($ex->getMessage() ?? __("Failed"));
+        }
+    }
+
+    public function fixUserPermission()
+    {
+
+        try {
+            Artisan::call('permission:cache-reset');
+            Artisan::call('db:seed --class=PermissionsTableSeeder --force');
+            Artisan::call('permission:cache-reset');
+            $this->showSuccessAlert(__("User permissions fixed") . " " . __("Successfully"));
+        } catch (\Exception $ex) {
+            $this->showErrorAlert($ex->getMessage() ?? __("Failed"));
+        }
+    }
+
+
 
 
     public function getDrivers()

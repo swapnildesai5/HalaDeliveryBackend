@@ -140,7 +140,6 @@ $(function () {
     //payu
     livewire.on("initPayUPayment", (paymentData) => {
         //
-        alert(paymentData);
         
         $("#payU_key").val(paymentData["payU_key"]);
         $("#payU_hash_string").val(paymentData["payU_hash_string"]);
@@ -156,7 +155,7 @@ $(function () {
         $("#payU_service_provider").val(paymentData["payU_service_provider"]);
 
         //
-        // document.payuform.submit();
+        document.payuform.submit();
     });
 
     //custom payment

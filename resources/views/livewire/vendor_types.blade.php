@@ -15,10 +15,9 @@
             <x-input title="{{ __('Color') }}" name="color" type="color" class="h-10" />
             <x-input title="{{ __('Description') }}" name="description" />
 
-          
-            <x-media-upload title="{{ __('Logo') }}" name="photo"
-                preview="{{ $selectedModel->logo ?? '' }}" :photo="$photo"
-                :photoInfo="$photoInfo" types="PNG or JPEG" rules="image/*" />
+
+            <x-media-upload title="{{ __('Logo') }}" name="photo" preview="{{ $selectedModel->logo ?? '' }}" :photo="$photo" :photoInfo="$photoInfo" types="PNG or JPEG" rules="image/*" />
+            <x-media-upload title="{{ __('Website Header image') }}" name="secondPhoto" preview="{{ $selectedModel->website_header ?? '' }}" :photo="$secondPhoto" :photoInfo="$secondPhotoInfo" types="PNG or JPEG" rules="image/*" />
 
             <x-checkbox title="{{ __('Active') }}" name="isActive" :defer="false" />
 
@@ -33,10 +32,9 @@
             <x-input title="{{ __('Color') }}" name="color" type="color" class="h-10" />
             <x-input title="{{ __('Description') }}" name="description" />
 
-          
-            <x-media-upload title="{{ __('Logo') }}" name="photo"
-                preview="{{ $selectedModel->logo ?? '' }}" :photo="$photo"
-                :photoInfo="$photoInfo" types="PNG or JPEG" rules="image/*" />
+
+            <x-media-upload title="{{ __('Logo') }}" name="photo" preview="{{ $selectedModel->logo ?? '' }}" :photo="$photo" :photoInfo="$photoInfo" types="PNG or JPEG" rules="image/*" />
+            <x-media-upload title="{{ __('Website Header image') }}" name="secondPhoto" preview="{{ $selectedModel->website_header ?? '' }}" :photo="$secondPhoto" :photoInfo="$secondPhotoInfo" types="PNG or JPEG" rules="image/*" />
 
             <x-checkbox title="{{ __('Active') }}" name="isActive" :defer="false" />
 

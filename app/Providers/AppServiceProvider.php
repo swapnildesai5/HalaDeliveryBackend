@@ -62,9 +62,10 @@ class AppServiceProvider extends ServiceProvider
             $user = \Auth::user();
             $isParcel = $user->vendor->vendor_type->is_parcel ?? false;
             $isService = $user->vendor->vendor_type->is_service ?? false;
+            $hasVendor = $user->vendor != null ?? false;
 
             //
-            if ($user && ($user->hasAnyRole('admin') || (!$isParcel && !$isService))) {
+            if ($user && ($user->hasAnyRole('admin') || (!$isParcel && !$isService && $hasVendor))) {
                 return 1;
             }
             return 0;

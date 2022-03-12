@@ -98,13 +98,13 @@ class OrderTable extends BaseDataTableComponent
             Column::make(__('Status'), 'status')
                 ->format(function ($value, $column, $row) {
                     return view('components.table.custom', $data = [
-                        "value" => \Str::ucfirst($row->status)
+                        "value" => __(\Str::ucfirst($row->status))
                     ]);
                 }),
             Column::make(__('Payment'), 'payment_status')
                 ->format(function ($value, $column, $row) {
                     return view('components.table.custom', $data = [
-                        "value" => \Str::ucfirst($row->payment_status)
+                        "value" => __(\Str::ucfirst($row->payment_status))
                     ]);
                 })->searchable(),
             Column::make(__('Total'), 'total')->format(function ($value, $column, $row) {

@@ -14,12 +14,23 @@ class BannerController extends Controller
     //
     public function index(Request $request)
     {
-        return BannerResource::collection(Banner::active()->inorder()->when($request->vendor_type_id, function ($query) use ($request) {
-            return $query->whereHas('category', function ($query) use ($request) {
-                return $query->active()->where('vendor_type_id', $request->vendor_type_id);
-            })->orWhereHas('vendor', function ($query) use ($request) {
-                return $query->active()->where('vendor_type_id', $request->vendor_type_id);
-            });
-        })->get());
+        return BannerResource::collection(
+            Banner::active()->inorder()
+                ->when(
+                    $request->vendor_type_id,
+                    function ($query) use ($request) {
+                        return $query->whereHas('category', function ($query) use ($request) {
+                            return $query->active()->where('vendor_type_id', $request->vendor_type_id);
+                        })->orWhereHas('vendor', function ($query) use ($request) {
+                            return $query->active()->where('vendor_type_id', $request->vendor_type_id);
+                        });
+                    }
+                )->when(
+                    $request->featured,
+                    function ($query) {
+                        return $query->where('featured','1');
+                    }
+                )->get()
+        );
     }
 }

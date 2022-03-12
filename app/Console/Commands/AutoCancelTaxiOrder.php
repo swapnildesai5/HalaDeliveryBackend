@@ -41,7 +41,11 @@ class AutoCancelTaxiOrder extends Command
     {
         //
         $cancelTime = setting('taxi.cancelPendingTaxiOrderTime', 2);
-        $expireDateTime = \Carbon\Carbon::now()->timezone(setting('timeZone', 'UTC'))->subMinutes($cancelTime)->format('Y-m-d h:i:s');
+        if($cancelTime == "0"){
+            return;
+        }
+
+        $expireDateTime = \Carbon\Carbon::now(setting('timeZone', 'UTC'))->subMinutes($cancelTime)->format('Y-m-d h:i:s');
         //get orders pending for more the ``autoCancelPendingOrderTime``
         $orders = Order::currentStatus('pending')->whereHas('taxi_order')->whereTime('updated_at', '<=', $expireDateTime)->limit(20)->get();
 

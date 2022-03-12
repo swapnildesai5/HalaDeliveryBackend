@@ -72,6 +72,58 @@ class AuthController extends Controller
         }
     }
 
+    public function qrlogin(Request $request)
+    {
+
+        $validator = Validator::make(
+            $request->all(),
+            [
+                'code' => 'required'
+            ],
+            $messages = [
+                'code.required' => __('Invalid Login Data'),
+            ]
+        );
+
+        if ($validator->fails()) {
+
+            return response()->json([
+                "message" => $this->readalbeError($validator),
+            ], 400);
+        }
+
+        try {
+            //decrypt the code
+            $loginObject = decrypt($request->code);
+            //
+            $user = User::findorfail($loginObject["id"]);
+
+            if (!empty($request->role) && !$user->hasAnyRole($request->role)) {
+                return response()->json([
+                    "message" => __("Unauthorized Access. Please try with an authorized credentials")
+                ], 401);
+            } else if (!$user->is_active) {
+                return response()->json([
+                    "message" => __("Account is not active. Please contact us")
+                ], 401);
+            } else if ($request->role == "manager" && empty($user->vendor_id)) {
+                return response()->json([
+                    "message" => __("Manager is not assigned to a vendor. Please assign manager to vendor and try again")
+                ], 401);
+            } else {
+                return $this->authObject($user);
+            }
+        } catch (\DecryptException $e) {
+            return response()->json([
+                "message" => __('Invalid Login Data')
+            ], 40);
+        } catch (\Exception $ex) {
+            return response()->json([
+                "message" =>$ex->getMessage() ??  __("Invalid credentials. Please check your password and try again")
+            ], 401);
+        }
+    }
+
 
     //
     public function verifyPhoneAccount(Request $request)

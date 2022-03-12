@@ -1,4 +1,4 @@
-@section('title', 'Orders')
+@section('title', __('Orders'))
 <div>
 
     <x-baseview title="{{ __('Orders') }}" :showNew="true">

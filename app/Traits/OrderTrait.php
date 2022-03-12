@@ -33,8 +33,10 @@ trait OrderTrait
     {
         //
         $canClearFirestore = (bool) setting('clearFirestore', 1);
+        logger("can clear firestore data", [$canClearFirestore]);
         //
         if (in_array($order->status, ['failed', 'cancelled', 'delivered', 'completed']) && $canClearFirestore) {
+            logger("clearing firestore data");
             try {
                 $firestoreClient = $this->getFirebaseStoreClient();
                 $firestoreClient->deleteDocument("orders/" . $order->code . "");

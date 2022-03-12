@@ -27,6 +27,7 @@ class VendorTypeLivewire extends BaseLivewireComponent
 
     protected $messages = [
         "photo.max" => "Logo must be not be more than 1MB",
+        "secondPhoto.max" => "Website header image must be not be more than 1MB",
     ];
 
     public function render()
@@ -56,6 +57,7 @@ class VendorTypeLivewire extends BaseLivewireComponent
                 "name" => "required|string",
                 "description" => "required|string",
                 "photo" => "nullable|sometimes|image|max:1024",
+                "secondPhoto" => "nullable|sometimes|image|max:1024",
             ]
         );
 
@@ -75,6 +77,13 @@ class VendorTypeLivewire extends BaseLivewireComponent
                 $model->clearMediaCollection("logo");
                 $model->addMedia($this->photo->getRealPath())->toMediaCollection("logo");
                 $this->photo = null;
+            }
+
+            if ($this->secondPhoto) {
+
+                $model->clearMediaCollection("website_header");
+                $model->addMedia($this->secondPhoto->getRealPath())->toMediaCollection("website_header");
+                $this->secondPhoto = null;
             }
 
             DB::commit();
@@ -97,6 +106,7 @@ class VendorTypeLivewire extends BaseLivewireComponent
                 "name" => "required|string",
                 "description" => "required|string",
                 "photo" => "nullable|sometimes|image|max:1024",
+                "secondPhoto" => "nullable|sometimes|image|max:1024",
             ]
         );
 
@@ -115,6 +125,13 @@ class VendorTypeLivewire extends BaseLivewireComponent
                 $model->clearMediaCollection("logo");
                 $model->addMedia($this->photo->getRealPath())->toMediaCollection("logo");
                 $this->photo = null;
+            }
+
+            if ($this->secondPhoto) {
+
+                $model->clearMediaCollection("website_header");
+                $model->addMedia($this->secondPhoto->getRealPath())->toMediaCollection("website_header");
+                $this->secondPhoto = null;
             }
 
             DB::commit();

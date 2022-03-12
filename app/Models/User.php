@@ -115,6 +115,16 @@ class User extends Authenticatable implements HasMedia
         return $photos;
     }
 
+    public function getQrcodeLoginAttribute()
+    {
+        return encrypt([
+            "id" => $this->id,
+            "email" => $this->email,
+            "code" => $this->code,
+        ]);
+    }
+
+
     public function scopeManager($query)
     {
         return $query->role('manager');

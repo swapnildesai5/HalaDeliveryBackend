@@ -61,7 +61,7 @@ class DashboardLivewire extends Component
 
         for ($loop = 0; $loop < 12; $loop++) {
             $date = Carbon::now()->firstOfYear()->addMonths($loop);
-            $formattedDate = $date->format("M");
+            $formattedDate = $date->translatedFormat("M");
             if (empty($user->vendor_id)) {
                 $data = Order::mine()->whereMonth("created_at", $date)->sum('total');
             } else {
@@ -89,7 +89,7 @@ class DashboardLivewire extends Component
 
         for ($loop = 0; $loop < 7; $loop++) {
             $date = Carbon::now()->startOfWeek()->addDays($loop);
-            $formattedDate = $date->format("D");
+            $formattedDate = $date->translatedFormat("D");
             $data = User::whereDate("created_at", $date)->count();
 
             //
@@ -112,7 +112,7 @@ class DashboardLivewire extends Component
 
         for ($loop = 0; $loop < 12; $loop++) {
             $date = Carbon::now()->firstOfYear()->addMonths($loop);
-            $formattedDate = $date->format("M");
+            $formattedDate = $date->translatedFormat("M");
             $data = Vendor::whereMonth("created_at", $date)->count();
 
             //
@@ -136,7 +136,7 @@ class DashboardLivewire extends Component
 
         for ($loop = 0; $loop < 12; $loop++) {
             $date = Carbon::now()->firstOfYear()->addMonths($loop);
-            $formattedDate = $date->format("M");
+            $formattedDate = $date->translatedFormat("M");
             $data = Order::mine()->whereMonth("created_at", $date)->count();
 
             //

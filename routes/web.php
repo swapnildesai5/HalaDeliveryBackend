@@ -101,6 +101,12 @@ use App\Http\Livewire\Report\SubscriptionReportLivewire;
 use App\Http\Livewire\Report\CustomerReportLivewire;
 use App\Http\Livewire\Report\ReferralReportLivewire;
 use App\Http\Livewire\Report\CommissionReportLivewire;
+
+// fleet manager
+use App\Http\Livewire\FleetUsersLivewire;
+use App\Http\Livewire\FleetVehiclesLivewire;
+use App\Http\Livewire\FleetsLivewire;
+use App\Http\Livewire\FleetOrderLivewire;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -275,6 +281,15 @@ Route::group(['middleware' => ['web']], function () {
         Route::get('reports/customers', CustomerReportLivewire::class)->name('reports.customers');
         Route::get('reports/referral', ReferralReportLivewire::class)->name('reports.referral');
         Route::get('reports/commission', CommissionReportLivewire::class)->name('reports.commission');
+
+        //fleet management
+        Route::group(['middleware' => ['role_or_permission:admin|fleet-manager|manage-fleet']], function () {
+
+            Route::get('fleet/list', FleetsLivewire::class)->name('fleets');
+            Route::get('fleet/users', FleetUsersLivewire::class)->name('fleet.users');
+            Route::get('fleet/vehicles', FleetVehiclesLivewire::class)->name('fleet.vehicles');
+            Route::get('fleet/report', FleetOrderLivewire::class)->name('fleet.report');
+        });
         
     });
 

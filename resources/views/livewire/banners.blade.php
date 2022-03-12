@@ -34,6 +34,7 @@
             {{-- category --}}
             <x-select title="{{ __('Category') }}" :options='$categories' name="category_id" :defer="true" :noPreSelect="true" />
             <x-checkbox title="{{ __('Active') }}" name="isActive" :defer="false" />
+            <x-checkbox title="{{ __('Featured') }}" description="{{ __('Can featured on home screen of customer app') }}" name="featured" :defer="false" />
 
         </x-modal>
     </div>
@@ -70,6 +71,7 @@
                 selected="{{ !empty($selectedModel) ? $selectedModel->category_id : '' }}"
                 :defer="true" :noPreSelect="true" />
             <x-checkbox title="{{ __('Active') }}" name="isActive" :defer="false" />
+            <x-checkbox title="{{ __('Featured') }}" description="{{ __('Can featured on home screen of customer app') }}" name="featured" :defer="false" />
 
 
         </x-modal>

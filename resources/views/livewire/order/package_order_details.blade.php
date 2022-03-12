@@ -11,9 +11,9 @@
 
 </div>
 {{-- recipient address/info --}}
-<div class="grid grid-cols-1 gap-4 md:grid-cols-2">
 
-    @foreach($selectedModel->stops as $key => $stop)
+@foreach($selectedModel->stops as $key => $stop)
+<div class="grid grid-cols-1 gap-4 p-4 m-4 mt-2 border border-gray-300 rounded-md md:grid-cols-2">
     <x-details.item title="{{ __('Stop') }} {{ $key + 1 }}">
         <p class="text-sm font-semibold"><span class="text-sm font-bold">{{ __('Name') }}:</span> {{ $stop->delivery_address->name ?? '' }}</p>
         <p class="text-sm font-medium"><span class="text-sm font-bold">{{ __('Address') }}:</span> {{ $stop->delivery_address->address ?? '' }}</p>
@@ -29,9 +29,16 @@
         @endempty
 
     </x-details.item>
+    {{-- order stop photo proof --}}
+    @if($stop != null && $stop->proof && !strpos($stop->proof, 'default.png') )
+    <x-details.item title="{{ __('Order Stop Proof') }}">
+        <a href="{{ $stop->proof }}" target="_blank"> <img src="{{ $stop->proof }}" class="w-24 h-24 rounded-sm" /></a>
+    </x-details.item>
+    <div></div>
+    @endif
+</div>
     @endforeach
 
-</div>
 <div class="grid grid-cols-1 gap-4 mt-5 border-t md:grid-cols-2 lg:grid-cols-3">
 
     <x-details.item title="{{ __('Vendor') }}" text="{{ $selectedModel->vendor->name ?? '' }}" />
@@ -61,19 +68,19 @@
 
 {{-- order photo --}}
 @if($selectedModel != null && $selectedModel->photo && !strpos($selectedModel->photo, 'default.png') )
-<p class="mt-8 font-bold text-md">Order Photo</p>
+<p class="mt-8 font-bold text-md">{{ __("Order Photo") }}</p>
 <a href="{{ $selectedModel->photo }}" target="_blank"> <img src="{{ $selectedModel->photo }}" class="w-56 h-56 rounded-sm" /></a>
 @endif
 
 {{-- order signature --}}
 @if($selectedModel != null && $selectedModel->signature && !strpos($selectedModel->signature, 'default.png') )
-<p class="mt-8 font-bold text-md">Signature</p>
+<p class="mt-8 font-bold text-md">{{ __("Signature") }}</p>
 <a href="{{ $selectedModel->signature }}" target="_blank"> <img src="{{ $selectedModel->signature }}" class="w-56 h-56 rounded-sm" /></a>
 @endif
 
 {{-- order delivery photo --}}
 @if($selectedModel != null && $selectedModel->delivery_photo && !strpos($selectedModel->delivery_photo, 'default.png') )
-<p class="mt-8 font-bold text-md">Delivery photo</p>
+<p class="mt-8 font-bold text-md">{{ __("Delivery photo") }}</p>
 <a href="{{ $selectedModel->delivery_photo }}" target="_blank"> <img src="{{ $selectedModel->delivery_photo }}" class="w-56 h-56 rounded-sm" /></a>
 @endif
 

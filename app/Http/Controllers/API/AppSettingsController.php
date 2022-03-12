@@ -26,6 +26,10 @@ class AppSettingsController extends Controller
         //     $showKeys = \Auth::guard('api')->user() != null;
         // }
 
+        //ui data
+        $uiData = setting("ui");
+        $uiData["home"]["showBannerOnHomeScreen"] = (bool) setting("ui.home.showBannerOnHomeScreen", 0);
+
         return response()->json([
 
             "colors" => setting("appColorTheme"),
@@ -78,15 +82,10 @@ class AppSettingsController extends Controller
                     "googleLogin" => (bool) setting("googleLogin"),
                     "appleLogin" => (bool) setting("appleLogin"),
                     "facebbokLogin" => (bool) setting("facebbokLogin"),
+                    "qrcodeLogin" => (bool) setting("qrcodeLogin"),
                 ],
                 //ui
-                "ui" => [
-                    "categorySize" => setting("ui.categorySize"),
-                    "currency" => setting("ui.currency"),
-                    "home" => [
-                        "showBannerOnHomeScreen" => (bool) setting("ui.home.showBannerOnHomeScreen", 0),
-                    ],
-                ],
+                "ui" => $uiData,
                 //taxi
                 "taxi" => setting("taxi"),
                 //for website 

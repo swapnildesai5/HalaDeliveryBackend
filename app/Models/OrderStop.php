@@ -15,4 +15,9 @@ class OrderStop extends BaseModel
     {
         return $this->belongsTo('App\Models\Order', 'order_id', 'id');
     }
+
+    public function getProofAttribute()
+    {
+        return $this->getFirstMediaUrl('proof');
+    }
 }

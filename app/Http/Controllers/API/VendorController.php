@@ -89,6 +89,9 @@ class VendorController extends Controller
             ->when($request->type == "rated", function ($query) {
                 return $query->orderByPowerJoinsAvg('ratings.rating', 'desc');
             })
+            ->when($request->type == "fresh", function ($query) {
+                return $query->latest();
+            })
             ->when($oldVendorType == "package", function ($query) use ($parcelVendorTypeId) {
                 return $query->where('vendor_type_id', $parcelVendorTypeId);
             })

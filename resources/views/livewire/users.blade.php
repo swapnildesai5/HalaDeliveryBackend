@@ -86,6 +86,19 @@
                 @endforeach
             </div>
 
+            @if (setting("qrcodeLogin", false))
+            <hr class="my-4" />
+            <p class="font-light">{{ __('Scan to login') }}</p>
+            <p class="text-xs font-thin">{{ __('Only works with mobile apps') }}</p>
+            <div class="items-center justify-center text-center">
+                <div class="w-56 h-56 mx-auto">
+                    @if ($selectedModel != null)
+                    <img src="{{ (new \chillerlan\QRCode\QRCode)->render($selectedModel->qrcodeLogin ?? '') }}" alt="{{ __('QR Code Login') }}" class="mx-auto" />
+                    @endif
+                </div>
+            </div>
+            @endif
+
         </x-modal>
     </div>
 </div>

@@ -20,6 +20,9 @@ class UISettingsLivewire extends BaseLivewireComponent
     public $currencyDecimalFormat;
     //home
     public $showBannerOnHomeScreen;
+    public $vendortypePerRow;
+    public $bannerPosition;
+    public $vendortypeListStyle;
 
     public $rules = [
         "categorySize_w" => "required|numeric",
@@ -46,9 +49,12 @@ class UISettingsLivewire extends BaseLivewireComponent
         $this->currencyFormat = setting('ui.currency.format', ",");
         $this->currencyDecimalFormat = setting('ui.currency.decimal_format', ".");
         $this->currencyDecimals = setting('ui.currency.decimals', 2);
-
+        
         //
         $this->showBannerOnHomeScreen = (bool) setting('ui.home.showBannerOnHomeScreen', false);
+        $this->vendortypePerRow = setting('ui.home.vendortypePerRow', 2);
+        $this->bannerPosition = setting('ui.home.bannerPosition', 'top');
+        $this->vendortypeListStyle = setting('ui.home.vendortypeListStyle', 'both');
         
     }
 
@@ -87,6 +93,9 @@ class UISettingsLivewire extends BaseLivewireComponent
                     
                     "home" => [
                         "showBannerOnHomeScreen" => $this->showBannerOnHomeScreen,
+                        "vendortypePerRow" => $this->vendortypePerRow,
+                        "bannerPosition" => $this->bannerPosition,
+                        "vendortypeListStyle" => $this->vendortypeListStyle,
                     ],
                     
                 ],

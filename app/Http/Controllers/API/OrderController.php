@@ -534,7 +534,7 @@ class OrderController extends Controller
             ], 400);
         }
         //wallet system
-        else if ($request->status == "enroute" && !empty($request->driver_id) && $enableDriverWallet) {
+        else if (empty($order->driver_id) && !empty($request->driver_id) && $enableDriverWallet) {
 
             //
             $driverWallet = $driver->wallet;

@@ -20,6 +20,7 @@ class BannerLivewire extends BaseLivewireComponent
     public $vendor_id;
     public $category_id;
     public $isActive;
+    public $featured;
     public $vendorSearchClause = [];
 
 
@@ -66,6 +67,7 @@ class BannerLivewire extends BaseLivewireComponent
             $model->vendor_id = $this->vendor_id ?? null;
             $model->link = $this->link ?? '';
             $model->is_active = $this->isActive ?? false;
+            $model->featured = $this->featured;
             $model->save();
 
             if ($this->photo) {
@@ -94,6 +96,7 @@ class BannerLivewire extends BaseLivewireComponent
         $this->vendor_id = $this->selectedModel->vendor_id;
         $this->link = $this->selectedModel->link;
         $this->isActive = $this->selectedModel->is_active;
+        $this->featured = $this->selectedModel->featured;
         $this->emit('preselectedVendorEmit', $this->selectedModel->vendor->name ?? "");
         $this->emit('showEditModal');
     }
@@ -118,6 +121,7 @@ class BannerLivewire extends BaseLivewireComponent
             $model->vendor_id = $this->vendor_id ?? null;
             $model->link = $this->link ?? '';
             $model->is_active = $this->isActive ?? false;
+            $model->featured = $this->featured;
             $model->save();
 
             if ($this->photo) {

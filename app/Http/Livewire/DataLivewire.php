@@ -50,6 +50,10 @@ class DataLivewire extends BaseLivewireComponent
             DB::table('taxi_orders')->truncate();
             //remittances
             DB::table('remittances')->truncate();
+            //commissions
+            DB::table('commissions')->truncate();
+            //coupons usage
+            DB::table('coupon_user')->truncate();
             //orders
             DB::table('orders')->truncate();
             DB::table('auto_assignments')->truncate();

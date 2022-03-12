@@ -45,7 +45,7 @@ class AutoTranslator extends Command
             //
             $translate = new TranslateClient(
                 [
-                    "keyFile" => json_decode(Storage::get(setting('serviceKeyPath', 'vault/firebase_service.json')), true),
+                    "keyFile" => json_decode(Storage::get('vault/firebase_service.json'), true),
                 ]
             );
 
